@@ -1,0 +1,62 @@
+{
+  "name": "rankio",
+  "version": "1.0.0",
+  "description": "Rankio | Proyecto estudiantil",
+  "main": "./public/app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/isaacSolano/rankio_examenFinal"
+  },
+  "keywords": [
+    "MEAN",
+    "ANGULARJS",
+    "BOOTSTRAP4",
+    "JQUERY",
+    "NODEJS"
+  ],
+  "author": "Catalyst",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/isaacSolano/rankio_examenFinal/issues"
+  },
+  "homepage": "https://github.com/isaacSolano/rankio_examenFinal#readme",
+  "devDependencies": {
+    "bcryptjs": "^2.4.3",
+    "browser-sync": "^2.23.6",
+    "crypto": "^1.0.1",
+    "express": "^4.16.3",
+    "gulp": "^3.9.1",
+    "gulp-connect": "^5.5.0",
+    "gulp-cssnano": "^2.1.3",
+    "gulp-jsdoc3": "^1.0.1",
+    "gulp-nodemon": "^2.2.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^3.2.1",
+    "gulp-todo": "^5.4.0",
+    "mongoose": "^5.0.11",
+    "morgan": "^1.9.0",
+    "nib": "^1.1.2",
+    "nodemailer": "^4.6.4"
+  },
+  "dependencies": {
+    "@uirouter/angularjs": "^1.0.15",
+    "angular": "^1.6.9",
+    "angular-messages": "^1.6.9",
+    "angular-scroll": "^1.0.2",
+    "bootstrap": "^4.0.0",
+    "browser-sync": "^2.23.6",
+    "generate-password": "^1.4.0",
+    "jquery": "^3.3.1",
+    "ng-file-model": "0.0.5",
+    "ng-file-upload": "^12.2.13",
+    "ngmap": "^1.18.4",
+    "node-mailer": "^0.1.1",
+    "oclazyload": "^1.1.0",
+    "popper.js": "^1.12.9",
+    "sweetalert": "^2.1.0",
+    "ui-router-page-title": "^1.0.5"
+  }
+}
