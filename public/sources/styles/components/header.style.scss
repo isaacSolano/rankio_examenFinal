@@ -1,0 +1,32 @@
+#mainHeader{
+    nav{
+        position: fixed;
+        z-index: 999;
+        background: #00af66;
+    }
+    a{
+        font-family: stellar, serif;
+        color: #fff;
+    }
+    button{
+        color: #fff;
+        font-family: stellar, serif;
+    }
+    #home{
+        font-size: 1.5em;
+        font-weight: 500;
+        #logo{
+            font-size: 2em;
+        }
+    }
+    #responsiveMenu{
+        li:hover{
+            transition: 0.5s;
+            border-bottom: 1px solid #ffff;
+        }
+        li{
+            transition: 0.5s;
+            border-bottom: 1px solid #00af66;
+        }
+    }
+}

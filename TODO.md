@@ -1,81 +1,6 @@
 ### TODOs
 | Filename | line # | TODO
 |:------|:------:|:------
-| node_modules\angular\angular.js | 2122 | @misko this function needs to be removed
-| node_modules\angular\angular.js | 2148 | @perf update `nodes` instead of creating a new object?
-| node_modules\angular\angular.js | 3717 | do we still need this?
-| node_modules\angular\angular.js | 3784 | this is a hack for angularMocks/clearDataCache that makes it possible to deregister all
-| node_modules\angular\angular.js | 6418 | @vojta remove this temporary api
-| node_modules\angular\angular.js | 6450 | @vojta prefix this method with $$ ?
-| node_modules\angular\angular.js | 6635 | @vojta refactor to use node's syntax for events
-| node_modules\angular\angular.js | 8421 | @pete remove the following `forEach` before we release 1.6.0
-| node_modules\angular\angular.js | 8837 | decide whether or not to throw an error if "class"
-| node_modules\angular\angular.js | 9123 | Make this detect MathML as well...
-| node_modules\angular\angular.js | 9656 | remove this line after Chrome 50 has been released
-| node_modules\angular\angular.js | 12748 | @vojta fix the signature
-| node_modules\angular\angular.js | 13025 | this is the same as the constantWatchDelegate in parse.js
-| node_modules\angular\angular.js | 14494 | @vojta rewrite link when opening in new tab/window (in legacy browser)
-| node_modules\angular\angular.js | 15296 | check that it is a constant
-| node_modules\angular\angular.js | 16644 | @docs add a note to docs that by implementing valueOf even objects and arrays can
-| node_modules\angular\angular.js | 25594 | @matsko implement validateLater to reduce number of validations
-| node_modules\angular\angular.js | 25606 | @matsko implement validateLater to reduce number of validations
-| node_modules\angular\angular.js | 25620 | @matsko implement validateLater to reduce number of validations
-| node_modules\angular\angular.js | 25716 | @matsko implement validateLater to reduce number of validations
-| node_modules\angular\angular.js | 25738 | @matsko implement validateLater to reduce number of validations
-| node_modules\angular\angular.js | 25754 | @matsko implement validateLater to reduce number of validations
-| node_modules\angular\angular.js | 31736 | @perf generate setters to shave off ~40ms or 1-1.5%
-| node_modules\clap\index.js | 286 | suggestions for options
-| node_modules\color-support\index.js | 100 | add more term programs
-| node_modules\engine.io-client\engine.io.js | 3565 | add a `localStorage` variable to explicitly enable/disable colors
-| node_modules\execa\index.js | 235 | missing some timeout logic for killed
-| node_modules\execa\index.js | 277 | set `stderr: 'ignore'` when that option is implemented
-| node_modules\execa\index.js | 282 | set `stdout: 'ignore'` when that option is implemented
-| node_modules\jsbn\index.js | 1289 | allow reseeding after first request
-| node_modules\jsdoc\cli.js | 33 | docs
-| node_modules\jsdoc\cli.js | 50 | docs
-| node_modules\jsdoc\cli.js | 113 | docs
-| node_modules\jsdoc\cli.js | 143 | docs
-| node_modules\jsdoc\cli.js | 155 | docs
-| node_modules\jsdoc\cli.js | 170 | docs
-| node_modules\jsdoc\cli.js | 197 | docs
-| node_modules\jsdoc\cli.js | 206 | docs
-| node_modules\jsdoc\cli.js | 217 | docs
-| node_modules\jsdoc\cli.js | 222 | docs
-| node_modules\jsdoc\cli.js | 229 | docs
-| node_modules\jsdoc\cli.js | 304 | docs
-| node_modules\jsdoc\cli.js | 464 | docs
-| node_modules\liftoff\index.js | 91 | break this out into lib/
-| node_modules\lodash\index.js | 7643 | Changes.cancel();
-| node_modules\mime-types\index.js | 54 | use media-typer
-| node_modules\mime-types\index.js | 78 | should this even be in this module?
-| node_modules\mime-types\index.js | 91 | use content-type or other module
-| node_modules\mime-types\index.js | 112 | use media-typer
-| node_modules\minimatch\minimatch.js | 462 | It would probably be faster to determine this
-| node_modules\moment\moment.js | 359 | Remove "ordinalParse" fallback in next major release.
-| node_modules\moment\moment.js | 1002 | add sorting
-| node_modules\moment\moment.js | 1042 | Another silent failure?
-| node_modules\moment\moment.js | 1830 | Find a better way to register and load all the locales in Node
-| node_modules\moment\moment.js | 2110 | We need to take the current isoWeekYear, but that depends on
-| node_modules\moment\moment.js | 2285 | Replace the vanilla JS Date object with an indepentent day-of-week check.
-| node_modules\moment\moment.js | 2389 | Move this to another part of the creation flow to prevent circular deps
-| node_modules\moment\moment.js | 2684 | Use [].sort instead?
-| node_modules\moment\moment.js | 3115 | remove 'name' arg after deprecation is removed
-| node_modules\moment\moment.js | 3670 | Remove "ordinalParse" fallback in next major release.
-| node_modules\moment\moment.js | 4198 | Use this.as('ms')?
-| node_modules\oclazyload\changelog.js | 121 | @vojta if it's slow, use spawn and stream it instead
-| node_modules\q\q.js | 745 | "===" should be Object.is or equiv
-| node_modules\q\q.js | 1786 | attempt to recycle the rejection with "this".
-| node_modules\send\index.js | 798 | this is all lame, refactor meeee
-| node_modules\spdx-expression-parse\parse.js | 46 | Actually, everything is concatenated into one string
-| node_modules\split\index.js | 13 | pass in a function to map across the lines.
-| node_modules\taffydb\taffy.js | 1092 | The curly braces used to be unescaped
-| node_modules\tweetnacl\nacl-fast.js | 2160 | Completely remove this in v0.15.
-| node_modules\tweetnacl\nacl.js | 947 | Completely remove this in v0.15.
-| node_modules\unzip-response\index.js | 6 | use Array#includes when targeting Node.js 6
-| node_modules\update-notifier\index.js | 25 | Remove deprecated options at some point far into the future
-| node_modules\uws\uws.js | 388 | default HTTP response
-| node_modules\vinyl\index.js | 43 | should this be moved to vinyl-fs?
-| node_modules\vinyl\index.js | 154 | should this be moved to vinyl-fs?
 | node_modules\babylon\lib\index.js | 21 | 
 | node_modules\babylon\lib\index.js | 25 | 
 | node_modules\babylon\lib\index.js | 1990 | 
@@ -219,10 +144,10 @@
 | node_modules\bootstrap\dist\js\bootstrap.js | 3406 | @fat remove sketch reliance on jQuery position/offset
 | node_modules\bootstrap\js\dist\modal.js | 397 | @fat these should probably be refactored out of modal.js
 | node_modules\bootstrap\js\dist\scrollspy.js | 115 | @fat remove sketch reliance on jQuery position/offset
-| node_modules\bootstrap\js\src\modal.js | 401 | @fat these should probably be refactored out of modal.js
-| node_modules\bootstrap\js\src\scrollspy.js | 132 | @fat remove sketch reliance on jQuery position/offset
 | node_modules\browser-sync\client\dist\index.js | 153 | add a `localStorage` variable to explicitly enable/disable colors
 | node_modules\bson\lib\bson\decimal128.js | 239 | implementing a custom parsing for this, or refactoring the regex would yield
+| node_modules\bootstrap\js\src\modal.js | 401 | @fat these should probably be refactored out of modal.js
+| node_modules\bootstrap\js\src\scrollspy.js | 132 | @fat remove sketch reliance on jQuery position/offset
 | node_modules\connect\node_modules\debug\browser.js | 37 | add a `localStorage` variable to explicitly enable/disable colors
 | node_modules\csso\lib\parser\index.js | 190 | remove it as wrong thing
 | node_modules\csso\lib\parser\index.js | 1594 | remove '=' since it's wrong operator, but theat as operator
@@ -237,8 +162,8 @@
 | node_modules\glob-stream\node_modules\minimatch\minimatch.js | 460 | It would probably be faster to determine this
 | node_modules\glob-stream\node_modules\string_decoder\index.js | 43 | Handling all encodings inside a single object makes it very difficult
 | node_modules\glob-stream\node_modules\string_decoder\index.js | 45 | There should be a utf8-strict encoding that rejects invalid UTF-8 code
-| node_modules\gulp-connect\node_modules\send\index.js | 685 | this is all lame, refactor meeee
 | node_modules\globby\node_modules\glob\common.js | 106 | is an absolute `cwd` supposed to be resolved against `root`?
+| node_modules\gulp-connect\node_modules\send\index.js | 685 | this is all lame, refactor meeee
 | node_modules\js-yaml\lib\js-yaml\loader.js | 591 | rework to inline fn with no type cast?
 | node_modules\js-yaml\lib\js-yaml\type.js | 45 | Add tag format check.
 | node_modules\jsdoc\lib\jsdoc\augment.js | 180 | try to reduce overlap with similar methods
@@ -264,9 +189,9 @@
 | node_modules\jsdoc\lib\jsdoc\schema.js | 385 | define this as an enumeration elsewhere
 | node_modules\jsdoc\lib\jsdoc\schema.js | 504 | make these an enumeration
 | node_modules\jsdoc\templates\default\publish.js | 675 | move the tutorial functions to templateHelper.js
-| node_modules\moment\src\locale\fr.js | 50 | Return 'e' when day of month > 1. Move this case inside
 | node_modules\mongodb\lib\bulk\common.js | 202 | Something better
 | node_modules\mongodb\lib\bulk\ordered.js | 227 | Bring from driver information in isMaster
+| node_modules\moment\src\locale\fr.js | 50 | Return 'e' when day of month > 1. Move this case inside
 | node_modules\mongodb-core\lib\connection\pool.js | 1193 | reenable when sessions development is complete
 | node_modules\mongodb-core\lib\topologies\replset.js | 1188 | once we drop Node 4, use destructuring either here or in arguments.
 | node_modules\mongodb-core\lib\topologies\shared.js | 385 | 
@@ -511,8 +436,19 @@
 | node_modules\jsdoc\lib\jsdoc\util\templateHelper.js | 941 | generate a warning (ideally during parsing!)
 | node_modules\jsdoc\lib\jsdoc\util\templateHelper.js | 975 | docs
 | node_modules\jsdoc\plugins\test\specs\markdown.js | 13 | more tests; refactor the plugin so multiple settings can be tested
-| node_modules\localtunnel\node_modules\debug\src\browser.js | 36 | add a `localStorage` variable to explicitly enable/disable colors
 | node_modules\localtunnel\node_modules\yargs\lib\validation.js | 136 | case-insensitive configurability
+| node_modules\localtunnel\node_modules\debug\src\browser.js | 36 | add a `localStorage` variable to explicitly enable/disable colors
+| node_modules\moment\src\lib\create\from-array.js | 100 | We need to take the current isoWeekYear, but that depends on
+| node_modules\moment\src\lib\create\from-string-and-format.js | 19 | Move this to another part of the creation flow to prevent circular deps
+| node_modules\moment\src\lib\create\from-string.js | 136 | Replace the vanilla JS Date object with an indepentent day-of-week check.
+| node_modules\moment\src\lib\duration\as.js | 35 | Use this.as('ms')?
+| node_modules\moment\src\lib\locale\locales.js | 50 | Find a better way to register and load all the locales in Node
+| node_modules\moment\src\lib\locale\set.js | 19 | Remove "ordinalParse" fallback in next major release.
+| node_modules\moment\src\lib\moment\add-subtract.js | 9 | remove 'name' arg after deprecation is removed
+| node_modules\moment\src\lib\moment\min-max.js | 52 | Use [].sort instead?
+| node_modules\moment\src\lib\units\day-of-month.js | 26 | Remove "ordinalParse" fallback in next major release.
+| node_modules\moment\src\lib\units\month.js | 152 | add sorting
+| node_modules\moment\src\lib\units\month.js | 192 | Another silent failure?
 | node_modules\ng-file-model\sample\lib\angular\angular.js | 1828 | @misko this function needs to be removed
 | node_modules\ng-file-model\sample\lib\angular\angular.js | 1854 | @perf just check if all items in `nodes` are siblings and if they are return the original
 | node_modules\ng-file-model\sample\lib\angular\angular.js | 3234 | do we still need this?
@@ -538,17 +474,6 @@
 | node_modules\ngmap\build\docs\js\prettify.js | 947 | @mikesamuel recognize non-latin letters and numerals in idents
 | node_modules\ngmap\build\docs\js\prettify.js | 1215 | Possibly optimize by using '' if there's no flicker.
 | node_modules\ngmap\config\jsdoc\template\publish.js | 644 | move the tutorial functions to templateHelper.js
-| node_modules\moment\src\lib\create\from-array.js | 100 | We need to take the current isoWeekYear, but that depends on
-| node_modules\moment\src\lib\create\from-string-and-format.js | 19 | Move this to another part of the creation flow to prevent circular deps
-| node_modules\moment\src\lib\create\from-string.js | 136 | Replace the vanilla JS Date object with an indepentent day-of-week check.
-| node_modules\moment\src\lib\duration\as.js | 35 | Use this.as('ms')?
-| node_modules\moment\src\lib\locale\locales.js | 50 | Find a better way to register and load all the locales in Node
-| node_modules\moment\src\lib\locale\set.js | 19 | Remove "ordinalParse" fallback in next major release.
-| node_modules\moment\src\lib\moment\add-subtract.js | 9 | remove 'name' arg after deprecation is removed
-| node_modules\moment\src\lib\moment\min-max.js | 52 | Use [].sort instead?
-| node_modules\moment\src\lib\units\day-of-month.js | 26 | Remove "ordinalParse" fallback in next major release.
-| node_modules\moment\src\lib\units\month.js | 152 | add sorting
-| node_modules\moment\src\lib\units\month.js | 192 | Another silent failure?
 | node_modules\node-sass\node_modules\request\lib\auth.js | 52 | More complete implementation of RFC 2617.
 | node_modules\nodemon\node_modules\debug\src\browser.js | 41 | add a `localStorage` variable to explicitly enable/disable colors
 | node_modules\sass-graph\node_modules\yargs\lib\argsert.js | 7 | should this eventually raise an exception.
@@ -564,17 +489,85 @@
 | node_modules\stylus\node_modules\source-map\test\source-map\test-util.js | 202 | Issue #128: Define and test this function properly.
 | node_modules\gulp-connect\node_modules\serve-static\node_modules\mime\build\test.js | 46 | Uncomment once #157 is resolved
 | node_modules\nodemon\node_modules\expand-brackets\node_modules\debug\src\browser.js | 36 | add a `localStorage` variable to explicitly enable/disable colors
+| node_modules\angular\angular.js | 2122 | @misko this function needs to be removed
+| node_modules\angular\angular.js | 2148 | @perf update `nodes` instead of creating a new object?
+| node_modules\angular\angular.js | 3717 | do we still need this?
+| node_modules\angular\angular.js | 3784 | this is a hack for angularMocks/clearDataCache that makes it possible to deregister all
+| node_modules\angular\angular.js | 6418 | @vojta remove this temporary api
+| node_modules\angular\angular.js | 6450 | @vojta prefix this method with $$ ?
+| node_modules\angular\angular.js | 6635 | @vojta refactor to use node's syntax for events
+| node_modules\angular\angular.js | 8421 | @pete remove the following `forEach` before we release 1.6.0
+| node_modules\angular\angular.js | 8837 | decide whether or not to throw an error if "class"
+| node_modules\angular\angular.js | 9123 | Make this detect MathML as well...
+| node_modules\angular\angular.js | 9656 | remove this line after Chrome 50 has been released
+| node_modules\angular\angular.js | 12748 | @vojta fix the signature
+| node_modules\angular\angular.js | 13025 | this is the same as the constantWatchDelegate in parse.js
+| node_modules\angular\angular.js | 14494 | @vojta rewrite link when opening in new tab/window (in legacy browser)
+| node_modules\angular\angular.js | 15296 | check that it is a constant
+| node_modules\angular\angular.js | 16644 | @docs add a note to docs that by implementing valueOf even objects and arrays can
+| node_modules\angular\angular.js | 25594 | @matsko implement validateLater to reduce number of validations
+| node_modules\angular\angular.js | 25606 | @matsko implement validateLater to reduce number of validations
+| node_modules\angular\angular.js | 25620 | @matsko implement validateLater to reduce number of validations
+| node_modules\angular\angular.js | 25716 | @matsko implement validateLater to reduce number of validations
+| node_modules\angular\angular.js | 25738 | @matsko implement validateLater to reduce number of validations
+| node_modules\angular\angular.js | 25754 | @matsko implement validateLater to reduce number of validations
+| node_modules\angular\angular.js | 31736 | @perf generate setters to shave off ~40ms or 1-1.5%
+| node_modules\clap\index.js | 286 | suggestions for options
+| node_modules\color-support\index.js | 100 | add more term programs
+| node_modules\engine.io-client\engine.io.js | 3565 | add a `localStorage` variable to explicitly enable/disable colors
+| node_modules\execa\index.js | 235 | missing some timeout logic for killed
+| node_modules\execa\index.js | 277 | set `stderr: 'ignore'` when that option is implemented
+| node_modules\execa\index.js | 282 | set `stdout: 'ignore'` when that option is implemented
+| node_modules\jsbn\index.js | 1289 | allow reseeding after first request
+| node_modules\jsdoc\cli.js | 33 | docs
+| node_modules\jsdoc\cli.js | 50 | docs
+| node_modules\jsdoc\cli.js | 113 | docs
+| node_modules\jsdoc\cli.js | 143 | docs
+| node_modules\jsdoc\cli.js | 155 | docs
+| node_modules\jsdoc\cli.js | 170 | docs
+| node_modules\jsdoc\cli.js | 197 | docs
+| node_modules\jsdoc\cli.js | 206 | docs
+| node_modules\jsdoc\cli.js | 217 | docs
+| node_modules\jsdoc\cli.js | 222 | docs
+| node_modules\jsdoc\cli.js | 229 | docs
+| node_modules\jsdoc\cli.js | 304 | docs
+| node_modules\jsdoc\cli.js | 464 | docs
+| node_modules\liftoff\index.js | 91 | break this out into lib/
+| node_modules\lodash\index.js | 7643 | Changes.cancel();
+| node_modules\mime-types\index.js | 54 | use media-typer
+| node_modules\mime-types\index.js | 78 | should this even be in this module?
+| node_modules\mime-types\index.js | 91 | use content-type or other module
+| node_modules\mime-types\index.js | 112 | use media-typer
+| node_modules\minimatch\minimatch.js | 462 | It would probably be faster to determine this
+| node_modules\moment\moment.js | 359 | Remove "ordinalParse" fallback in next major release.
+| node_modules\moment\moment.js | 1002 | add sorting
+| node_modules\moment\moment.js | 1042 | Another silent failure?
+| node_modules\moment\moment.js | 1830 | Find a better way to register and load all the locales in Node
+| node_modules\moment\moment.js | 2110 | We need to take the current isoWeekYear, but that depends on
+| node_modules\moment\moment.js | 2285 | Replace the vanilla JS Date object with an indepentent day-of-week check.
+| node_modules\moment\moment.js | 2389 | Move this to another part of the creation flow to prevent circular deps
+| node_modules\moment\moment.js | 2684 | Use [].sort instead?
+| node_modules\moment\moment.js | 3115 | remove 'name' arg after deprecation is removed
+| node_modules\moment\moment.js | 3670 | Remove "ordinalParse" fallback in next major release.
+| node_modules\moment\moment.js | 4198 | Use this.as('ms')?
+| node_modules\oclazyload\changelog.js | 121 | @vojta if it's slow, use spawn and stream it instead
+| node_modules\q\q.js | 745 | "===" should be Object.is or equiv
+| node_modules\q\q.js | 1786 | attempt to recycle the rejection with "this".
+| node_modules\send\index.js | 798 | this is all lame, refactor meeee
+| node_modules\spdx-expression-parse\parse.js | 46 | Actually, everything is concatenated into one string
+| node_modules\split\index.js | 13 | pass in a function to map across the lines.
+| node_modules\taffydb\taffy.js | 1092 | The curly braces used to be unescaped
+| node_modules\tweetnacl\nacl-fast.js | 2160 | Completely remove this in v0.15.
+| node_modules\tweetnacl\nacl.js | 947 | Completely remove this in v0.15.
+| node_modules\unzip-response\index.js | 6 | use Array#includes when targeting Node.js 6
+| node_modules\update-notifier\index.js | 25 | Remove deprecated options at some point far into the future
+| node_modules\uws\uws.js | 388 | default HTTP response
+| node_modules\vinyl\index.js | 43 | should this be moved to vinyl-fs?
+| node_modules\vinyl\index.js | 154 | should this be moved to vinyl-fs?
 
 ### FIXMEs
 | Filename | line # | FIXME
 |:------|:------:|:------
-| node_modules\angular\angular.js | 30842 | When a user selects an option, this watch will fire needlessly
-| node_modules\esprima\esprima.js | 2614 | @ikarienator this is seemingly an issue in the previous location info convention.
-| node_modules\is-my-ip-valid\index.js | 33 | this should probably be an option in the future
-| node_modules\q\q.js | 355 | Remove this function once ES6 generators are in SpiderMonkey.
-| node_modules\q\q.js | 363 | Remove this helper and Q.return once ES6 generators are in
-| node_modules\q\q.js | 1309 | Remove this case when SM does ES6 generators.
-| node_modules\q\q.js | 1341 | Remove this interface once ES6 generators are in SpiderMonkey.
 | node_modules\csso\lib\cli.js | 10 | don't chain until node.js 0.10 drop, since setEncoding isn't chainable in 0.10
 | node_modules\debug\src\node.js | 200 | Should probably have an option in net.Socket to create a
 | node_modules\debug\src\node.js | 208 | Hack to have stream not keep the event loop alive.
@@ -600,3 +593,10 @@
 | node_modules\gulp-connect\node_modules\send\node_modules\debug\node.js | 185 | Hack to have stream not keep the event loop alive.
 | node_modules\nodemon\node_modules\expand-brackets\node_modules\debug\src\node.js | 200 | Should probably have an option in net.Socket to create a
 | node_modules\nodemon\node_modules\expand-brackets\node_modules\debug\src\node.js | 208 | Hack to have stream not keep the event loop alive.
+| node_modules\angular\angular.js | 30842 | When a user selects an option, this watch will fire needlessly
+| node_modules\esprima\esprima.js | 2614 | @ikarienator this is seemingly an issue in the previous location info convention.
+| node_modules\is-my-ip-valid\index.js | 33 | this should probably be an option in the future
+| node_modules\q\q.js | 355 | Remove this function once ES6 generators are in SpiderMonkey.
+| node_modules\q\q.js | 363 | Remove this helper and Q.return once ES6 generators are in
+| node_modules\q\q.js | 1309 | Remove this case when SM does ES6 generators.
+| node_modules\q\q.js | 1341 | Remove this interface once ES6 generators are in SpiderMonkey.
