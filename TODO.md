@@ -144,10 +144,10 @@
 | node_modules\bootstrap\dist\js\bootstrap.js | 3406 | @fat remove sketch reliance on jQuery position/offset
 | node_modules\bootstrap\js\dist\modal.js | 397 | @fat these should probably be refactored out of modal.js
 | node_modules\bootstrap\js\dist\scrollspy.js | 115 | @fat remove sketch reliance on jQuery position/offset
-| node_modules\browser-sync\client\dist\index.js | 153 | add a `localStorage` variable to explicitly enable/disable colors
-| node_modules\bson\lib\bson\decimal128.js | 239 | implementing a custom parsing for this, or refactoring the regex would yield
 | node_modules\bootstrap\js\src\modal.js | 401 | @fat these should probably be refactored out of modal.js
 | node_modules\bootstrap\js\src\scrollspy.js | 132 | @fat remove sketch reliance on jQuery position/offset
+| node_modules\browser-sync\client\dist\index.js | 153 | add a `localStorage` variable to explicitly enable/disable colors
+| node_modules\bson\lib\bson\decimal128.js | 239 | implementing a custom parsing for this, or refactoring the regex would yield
 | node_modules\connect\node_modules\debug\browser.js | 37 | add a `localStorage` variable to explicitly enable/disable colors
 | node_modules\csso\lib\parser\index.js | 190 | remove it as wrong thing
 | node_modules\csso\lib\parser\index.js | 1594 | remove '=' since it's wrong operator, but theat as operator
@@ -164,8 +164,6 @@
 | node_modules\glob-stream\node_modules\string_decoder\index.js | 45 | There should be a utf8-strict encoding that rejects invalid UTF-8 code
 | node_modules\globby\node_modules\glob\common.js | 106 | is an absolute `cwd` supposed to be resolved against `root`?
 | node_modules\gulp-connect\node_modules\send\index.js | 685 | this is all lame, refactor meeee
-| node_modules\js-yaml\lib\js-yaml\loader.js | 591 | rework to inline fn with no type cast?
-| node_modules\js-yaml\lib\js-yaml\type.js | 45 | Add tag format check.
 | node_modules\jsdoc\lib\jsdoc\augment.js | 180 | try to reduce overlap with similar methods
 | node_modules\jsdoc\lib\jsdoc\augment.js | 217 | this will fail on longnames like: MyClass#"quoted#Longname"
 | node_modules\jsdoc\lib\jsdoc\augment.js | 290 | why do we run a map if we always shorten the same value? this looks like a bug...
@@ -189,12 +187,14 @@
 | node_modules\jsdoc\lib\jsdoc\schema.js | 385 | define this as an enumeration elsewhere
 | node_modules\jsdoc\lib\jsdoc\schema.js | 504 | make these an enumeration
 | node_modules\jsdoc\templates\default\publish.js | 675 | move the tutorial functions to templateHelper.js
-| node_modules\mongodb\lib\bulk\common.js | 202 | Something better
-| node_modules\mongodb\lib\bulk\ordered.js | 227 | Bring from driver information in isMaster
+| node_modules\js-yaml\lib\js-yaml\loader.js | 591 | rework to inline fn with no type cast?
+| node_modules\js-yaml\lib\js-yaml\type.js | 45 | Add tag format check.
 | node_modules\moment\src\locale\fr.js | 50 | Return 'e' when day of month > 1. Move this case inside
 | node_modules\mongodb-core\lib\connection\pool.js | 1193 | reenable when sessions development is complete
 | node_modules\mongodb-core\lib\topologies\replset.js | 1188 | once we drop Node 4, use destructuring either here or in arguments.
 | node_modules\mongodb-core\lib\topologies\shared.js | 385 | 
+| node_modules\mongodb\lib\bulk\common.js | 202 | Something better
+| node_modules\mongodb\lib\bulk\ordered.js | 227 | Bring from driver information in isMaster
 | node_modules\mongoose\lib\error\divergentArray.js | 23 | write up a docs page (FAQ) and link to it
 | node_modules\mongoose\lib\types\documentarray.js | 153 | cast to the _id based on schema for proper comparison
 | node_modules\mquery\lib\collection\node.js | 144 | 
@@ -352,8 +352,6 @@
 | node_modules\express\node_modules\iconv-lite\lib\extend-node.js | 167 | Set _charsWritten.
 | node_modules\express\node_modules\mime\build\test.js | 46 | Uncomment once #157 is resolved
 | node_modules\glob-stream\node_modules\readable-stream\lib\_stream_writable.js | 145 | defer error events consistently everywhere, not just the cb
-| node_modules\globule\node_modules\minimatch\test\basic.js | 3 | Some of these tests do very bad things with backslashes, and will
-| node_modules\globule\node_modules\minimatch\test\defaults.js | 3 | Some of these tests do very bad things with backslashes, and will
 | node_modules\jquery\external\sizzle\dist\sizzle.js | 254 | identify versions
 | node_modules\jquery\external\sizzle\dist\sizzle.js | 268 | identify versions
 | node_modules\jsdoc\lib\jsdoc\opts\argparser.js | 85 | refactor addOption to accept objects, then get rid of this method
@@ -436,12 +434,14 @@
 | node_modules\jsdoc\lib\jsdoc\util\templateHelper.js | 941 | generate a warning (ideally during parsing!)
 | node_modules\jsdoc\lib\jsdoc\util\templateHelper.js | 975 | docs
 | node_modules\jsdoc\plugins\test\specs\markdown.js | 13 | more tests; refactor the plugin so multiple settings can be tested
-| node_modules\localtunnel\node_modules\yargs\lib\validation.js | 136 | case-insensitive configurability
 | node_modules\localtunnel\node_modules\debug\src\browser.js | 36 | add a `localStorage` variable to explicitly enable/disable colors
+| node_modules\localtunnel\node_modules\yargs\lib\validation.js | 136 | case-insensitive configurability
+| node_modules\globule\node_modules\minimatch\test\basic.js | 3 | Some of these tests do very bad things with backslashes, and will
+| node_modules\globule\node_modules\minimatch\test\defaults.js | 3 | Some of these tests do very bad things with backslashes, and will
+| node_modules\moment\src\lib\duration\as.js | 35 | Use this.as('ms')?
 | node_modules\moment\src\lib\create\from-array.js | 100 | We need to take the current isoWeekYear, but that depends on
 | node_modules\moment\src\lib\create\from-string-and-format.js | 19 | Move this to another part of the creation flow to prevent circular deps
 | node_modules\moment\src\lib\create\from-string.js | 136 | Replace the vanilla JS Date object with an indepentent day-of-week check.
-| node_modules\moment\src\lib\duration\as.js | 35 | Use this.as('ms')?
 | node_modules\moment\src\lib\locale\locales.js | 50 | Find a better way to register and load all the locales in Node
 | node_modules\moment\src\lib\locale\set.js | 19 | Remove "ordinalParse" fallback in next major release.
 | node_modules\moment\src\lib\moment\add-subtract.js | 9 | remove 'name' arg after deprecation is removed

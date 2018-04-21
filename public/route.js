@@ -16,6 +16,21 @@
         }
       })
 
+      .state('registroUsuarios', {
+        url: '/registroUsuarios',
+        templateUrl: './components/usuarios/registroUsuarios/registroUsuarios.view.html',
+        data: {
+          pageTitle: 'Rankio | Registro usuarios'
+        },
+        resolve: {
+          load: ['$ocLazyLoad', ($ocLazyLoad) => {
+            return $ocLazyLoad.load('./components/usuarios/registroUsuarios/registroUsuarios.controller.js')
+          }]
+        },
+        controller: 'controladorRegistroUsuarios',
+        controllerAs: 'vm'
+      })
+
     $urlRouterProvider.otherwise('/');
   };
 })();

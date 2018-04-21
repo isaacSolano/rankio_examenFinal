@@ -3,7 +3,7 @@ const express = require('express'),
       path = require('path');
 
 router.get('*', (req, res, next) => {
-  // res.sendFile(path.join(__dirname + '/../public/index.html'));
+  res.sendFile(path.join(__dirname + '/../public/index.html'));
 });
 
 module.exports = router;

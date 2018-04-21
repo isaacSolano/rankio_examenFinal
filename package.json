@@ -2,7 +2,7 @@
   "name": "rankio",
   "version": "1.0.0",
   "description": "Rankio | Proyecto estudiantil",
-  "main": "./public/app.js",
+  "main": "./api/server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

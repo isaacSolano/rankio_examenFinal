@@ -14,7 +14,7 @@ const express = require('express'),
  * Se definen las variables necesarias para la conexión con MongoDB
  */
 let db = mongoose.connection,
-    dburl = '', // link pendiente
+    dburl = 'mongodb://isaacs:angular123.@ds247439.mlab.com:47439/rankio',
     port = 4000;
 
 let server = app.listen(port,_server());
@@ -58,7 +58,10 @@ app.use( (req, res, next) => {
   next();
 });
 
+const index = require('./index'),
+        usuarios = require('./components/usuarios/usuarios.route');
 
+app.use('/api', usuarios)
 
 /// Se guarda todo lo que se ha realizado
 module.exports = app;

@@ -27,7 +27,7 @@ gulp.task('connect', () => {
   browserSync.init({
     server: './public'
   });
-  // nodemon();
+  nodemon();
 });
 
 gulp.task('to-do', () => {
