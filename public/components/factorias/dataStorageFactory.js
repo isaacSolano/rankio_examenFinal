@@ -9,7 +9,11 @@
     function dataStorageFactory(){
         let dataAPI = {
             agregarUsuario: _agregarUsuario,
-            retornarUsuarios: _retornarUsuarios
+            retornarUsuarios: _retornarUsuarios,
+
+            crearSesion: _crearSesion,
+            eliminarSesion: _eliminarSesion,
+            retornarSesionActiva: _retornarSesionActiva
         }
         return dataAPI
 
@@ -28,7 +32,8 @@
                     'correo': data.correo,
                     'fecha': data.fecha,
                     'nombreCompleto': data.nombreCompleto,
-                    'telefono': data.telefono
+                    'telefono': data.telefono,
+                    'admin': data.admin,
                 }
             });
             peticion.done((datos) => {
@@ -60,6 +65,18 @@
                 console.log('Error en la petición');
             });
             return usuariosBD
+        }
+
+        function _crearSesion(value){
+            sessionStorage.setItem('session', JSON.stringify(value));
+        }
+
+        function _eliminarSesion(){
+            sessionStorage.removeItem('session');
+        }
+
+        function _retornarSesionActiva(){
+            return JSON.parse(sessionStorage.getItem('session'));
         }
     }
 })();

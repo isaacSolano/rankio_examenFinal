@@ -31,6 +31,36 @@
         controllerAs: 'vm'
       })
 
+      .state('inicioSesion', {
+        url: '/inicioSesion',
+        templateUrl: './components/usuarios/inicioSesion/inicioSesion.view.html',
+        data: {
+          pageTitle: 'Rankio | Inicio sesión'
+        },
+        resolve: {
+          load: ['$ocLazyLoad', ($ocLazyLoad) => {
+            return $ocLazyLoad.load('./components/usuarios/inicioSesion/inicioSesion.controller.js')
+          }]
+        },
+        controller: 'controladorInicioSesion',
+        controllerAs: 'vm'
+      })
+
+      .state('central', {
+        url: '/central',
+        templateUrl: './components/central/central.view.html',
+        data: {
+          pageTitle: 'Rankio | Inicio'
+        },
+        resolve: {
+          load: ['$ocLazyLoad', ($ocLazyLoad) => {
+            return $ocLazyLoad.load('./components/central/central.controller.js')
+          }]
+        },
+        controller: 'controladorCentral',
+        controllerAs: 'vm'
+      })
+
     $urlRouterProvider.otherwise('/');
   };
 })();

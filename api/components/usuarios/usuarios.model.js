@@ -6,7 +6,8 @@ var UsuarioSchema = new mongoose.Schema({
     correo: {type: String, required: true},
     fecha: {type: String, required: true},
     nombreCompleto: {type: String, required: true},
-    telefono: {type: String,  required: true}
+    telefono: {type: String,  required: true},
+    admin: {type: Boolean, required: true},
 });
 
 module.exports = mongoose.model('Usuario', UsuarioSchema);

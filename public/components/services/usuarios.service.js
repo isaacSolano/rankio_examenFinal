@@ -37,7 +37,7 @@
             if(usuariosBD.length == 0){
             }else{
                 usuariosBD.forEach(obj => {
-                    let nuevoRegistroUsuario = new Usuario(obj.cedula, obj.contrasena, obj.correo, obj.fecha, obj.nombreCompleto, obj.telefono);
+                    let nuevoRegistroUsuario = new Usuario(obj.cedula, obj.contrasena, obj.correo, obj.fecha, obj.nombreCompleto, obj.telefono, obj.admin);
                     todosLosUsuarios.push(nuevoRegistroUsuario);
                 });
             }

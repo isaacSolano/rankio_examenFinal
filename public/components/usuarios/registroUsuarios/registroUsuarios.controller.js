@@ -13,6 +13,8 @@
         vm.registrarUsuario = (pusuarioRegistar) => {
             let edadValida = verificarEdad(pusuarioRegistar.fecha),
                 contrasenasValidas = validarContrasenias(pusuarioRegistar.contrasena, pusuarioRegistar.confContrasena);
+                
+                pusuarioRegistar.admin = false;
 
             if(!edadValida || !contrasenasValidas){
                 swal({
@@ -22,7 +24,7 @@
                     button: 'Aceptar'
                 });
             }else{
-                let nuevoRegistroUsuario = new Usuario(pusuarioRegistar.cedula, pusuarioRegistar.contrasena, pusuarioRegistar.correo, pusuarioRegistar.fecha, pusuarioRegistar.nombreCompleto, pusuarioRegistar.telefono);
+                let nuevoRegistroUsuario = new Usuario(pusuarioRegistar.cedula, pusuarioRegistar.contrasena, pusuarioRegistar.correo, pusuarioRegistar.fecha, pusuarioRegistar.nombreCompleto, pusuarioRegistar.telefono, pusuarioRegistar.admin);
 
                 let exito = servicioUsuarios.agregarUsuario(nuevoRegistroUsuario);
 
