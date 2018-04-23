@@ -61,6 +61,36 @@
         controllerAs: 'vm'
       })
 
+      .state('central.listaHoteles', {
+        url: '/listaHoteles',
+        templateUrl: './components/hoteles/listaHoteles/listaHoteles.view.html',
+        data: {
+          pageTitle: 'Rankio | Lista de hoteles'
+        },
+        resolve: {
+          load: ['$ocLazyLoad', ($ocLazyLoad) => {
+            return $ocLazyLoad.load('./components/hoteles/listaHoteles/listaHoteles.controller.js')
+          }]
+        },
+        controller: 'controladorListaHoteles',
+        controllerAs: 'vm'
+      })
+
+      .state('central.registrarHoteles', {
+        url: '/registrarHoteles',
+        templateUrl: './components/hoteles/registroHoteles/registroHoteles.view.html',
+        data: {
+          pageTitle: 'Rankio | Registro de hoteles'
+        },
+        resolve: {
+          load: ['$ocLazyLoad', ($ocLazyLoad) => {
+            return $ocLazyLoad.load('./components/hoteles/registroHoteles/registroHoteles.controller.js')
+          }]
+        },
+        controller: 'controladorRegistroHoteles',
+        controllerAs: 'vm'
+      })
+
     $urlRouterProvider.otherwise('/');
   };
 })();

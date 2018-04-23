@@ -8,7 +8,6 @@
     controladorCentral.$inject = ['$state', '$stateParams', 'servicioSesion'];
 
     function controladorCentral($state, $stateParams, servicioSesion) {
-        let vm = this;
 
         const correoActivo = servicioSesion.usuarioActivo();
 
@@ -16,6 +15,9 @@
             $state.go('inicio');
         }
 
+        let vm = this;
+
+        vm.admin = servicioSesion.infoUsuarioActivo(correoActivo).admin;
 
         vm.cerrarSesion = () => {
             swal({

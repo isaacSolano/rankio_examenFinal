@@ -21,7 +21,7 @@
                     button: 'Aceptar'
                 })
             }else{
-                $state.go('central')
+                $state.go('central.listaHoteles')
             }
         }
     }

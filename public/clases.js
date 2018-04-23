@@ -12,3 +12,34 @@ class Usuario{
         return this.correo
     }
 }
+
+class Hotel{
+    constructor(pcanton, platitud, plongitud, pcorreoAtencion, pcorreoReservaciones, pdireccion, pdistrito, pfoto, pnombre, pprovincia, ptelefonoAtencion, ptelefonoReservaciones, pcodigo){
+        this.canton = pcanton;
+        this.latitud = platitud;
+        this.longitud = plongitud;
+        this.correoAtencion = pcorreoAtencion;
+        this.correoReservaciones = pcorreoReservaciones;
+        this.direccion = pdireccion;
+        this.distrito = pdistrito;
+        this.foto = pfoto;
+        this.nombre = pnombre;
+        this.provincia = pprovincia;
+        this.telefonoAtencion = ptelefonoAtencion;
+        this.telefonoReservaciones = ptelefonoReservaciones;
+        this.codigo = pcodigo;
+        this.calificaciones = [];
+    }
+    getId(){
+        return this.codigo
+    }
+    setCalificacion(pIdCalificaion){
+        this.calificaciones.push(pIdCalificaion);
+    }
+}
+
+class Calificacion{
+    constructor(pcodigo){
+        this.codigo = pcodigo;
+    }
+}

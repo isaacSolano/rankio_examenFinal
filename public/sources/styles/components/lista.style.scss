@@ -1,0 +1,19 @@
+#mainList{
+    margin: 8em auto 0 auto;
+    font-family: stellar, serif;
+    h1, h3, h4{
+        font-weight: 300;
+        color: #25282a;
+    }
+
+    #list-element{
+        border-bottom: 1px solid #25282a;
+
+        p{
+            color: #25282a;
+        }
+        img{
+            height: 20em;
+        }
+    }
+}

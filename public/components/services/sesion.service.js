@@ -11,7 +11,8 @@
         let sessionAPI = {
             inicioSesion: _inicioSesion,
             cerrarSesion: _cerrarSesion,
-            usuarioActivo: _usuarioActivo
+            usuarioActivo: _usuarioActivo,
+            infoUsuarioActivo: _infoUsuarioActivo
         }
         return sessionAPI
 
@@ -42,6 +43,18 @@
                 correoActivo = sesionActiva;
             }
             return correoActivo
+        }
+
+        function _infoUsuarioActivo(pcorreo){
+            let usuariosBD = servicioUsuarios.retornarUsuarios(),
+                infoUsuarioActivo = [];
+
+            for(let i=0; i<usuariosBD.length; i++){
+                if(usuariosBD[i].getId() == pcorreo){
+                    infoUsuarioActivo = usuariosBD[i];
+                }
+            }
+            return infoUsuarioActivo
         }
 
     }

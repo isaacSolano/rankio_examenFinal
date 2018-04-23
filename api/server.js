@@ -59,9 +59,11 @@ app.use( (req, res, next) => {
 });
 
 const index = require('./index'),
-        usuarios = require('./components/usuarios/usuarios.route');
+        usuarios = require('./components/usuarios/usuarios.route'),
+        hoteles = require('./components/hoteles/hoteles.route');
 
-app.use('/api', usuarios)
+app.use('/api', usuarios);
+app.use('/api', hoteles);
 
 /// Se guarda todo lo que se ha realizado
 module.exports = app;
