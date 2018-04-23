@@ -9,7 +9,8 @@
     function servicioHoteles(dataStorageFactory){
         const publicAPI = {
             registrarHotel: _registrarHotel,
-            retornarHoteles: _retornarHoteles
+            retornarHoteles: _retornarHoteles,
+            eliminarHotel: _eliminarHotel
         }
         return publicAPI
 
@@ -46,6 +47,12 @@
                 });
             }
             return todosLosHoteles
+        }
+
+        function _eliminarHotel(photel){
+            let exito = dataStorageFactory.eliminarHotel(photel);
+
+            return exito
         }
     }
 })();

@@ -32,3 +32,13 @@ module.exports.retornar = (req, res) => {
         res.send(hoteles);
     })
 }
+
+module.exports.eliminar = (req, res) => {
+    HotelModel.deleteOne({codigo: req.body.codigo}, (err) => {
+        if(err){
+            res.json({success:false, msj: 'Problemas en la petición' + err});
+        }else{
+            res.json({success:true, msj: 'Se registro correctamente'});
+        }
+    });
+}

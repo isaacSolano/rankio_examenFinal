@@ -18,4 +18,9 @@ router.route('/retornar_hoteles')
         hoteles.retornar(req, res)
     });
 
+router.route('/eliminar_hotel')
+    .post((req, res) => {
+        hoteles.eliminar(req, res)
+    });
+
 module.exports = router;

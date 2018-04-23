@@ -13,6 +13,7 @@
 
             agregarHotel: _agregarHotel,
             retornarHoteles: _retornarHoteles,
+            eliminarHotel: _eliminarHotel,
 
             crearSesion: _crearSesion,
             eliminarSesion: _eliminarSesion,
@@ -125,6 +126,42 @@
                 console.log('Error en la petición');
             });
             return hotelesBD
+        }
+
+        function _eliminarHotel(data){
+            let response;
+
+            let peticion = $.ajax({
+                url: 'http://localhost:4000/api/eliminar_hotel',
+                type: 'post',
+                contentType: 'application/x-www-form-urlencoded; charset=utf-8',
+                dataType: 'json',
+                async: false,
+                data: {
+                    'canton': data.canton,
+                    'latitud': data.latitud,
+                    'longitud': data.longitud,
+                    'correoAtencion': data.correoAtencion,
+                    'correoReservaciones': data.correoReservaciones,
+                    'direccion': data.direccion,
+                    'distrito': data.distrito,
+                    'foto': data.foto,
+                    'nombre': data.nombre,
+                    'provincia': data.provincia,
+                    'telefonoAtencion': data.telefonoAtencion,
+                    'telefonoReservaciones': data.telefonoReservaciones,
+                    'codigo': data.codigo,
+                    'calificaciones': data.calificaciones,
+                }                
+            });
+
+            peticion.done((datos) => {
+                response = datos.success;
+            });
+            peticion.fail((err) => {
+                response = err
+            });
+            return response;
         }
 
         function _crearSesion(value){
