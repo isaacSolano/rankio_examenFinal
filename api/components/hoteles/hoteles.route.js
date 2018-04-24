@@ -23,4 +23,9 @@ router.route('/eliminar_hotel')
         hoteles.eliminar(req, res)
     });
 
+router.route('/actualizar_hotel')
+    .put((req, res) => {
+        hoteles.actualizar(req, res);
+    });
+
 module.exports = router;

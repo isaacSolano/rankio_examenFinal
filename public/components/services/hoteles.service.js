@@ -7,10 +7,18 @@
 
     servicioHoteles.$inject = ['dataStorageFactory'];
     function servicioHoteles(dataStorageFactory){
+        const key = 'hotel';
         const publicAPI = {
             registrarHotel: _registrarHotel,
             retornarHoteles: _retornarHoteles,
-            eliminarHotel: _eliminarHotel
+            eliminarHotel: _eliminarHotel,
+            actualizarHotel: _actualizarHotel,
+
+            crearSesion: _crearSesion,
+            hotelActivo: _hotelActivo,
+            borrarSesion: _borrarSesion,
+
+            obtenerInfoHotel: _obtenerInfoHotel
         }
         return publicAPI
 
@@ -53,6 +61,45 @@
             let exito = dataStorageFactory.eliminarHotel(photel);
 
             return exito
+        }
+
+        function _crearSesion(pcodigo){
+            let exito = dataStorageFactory.crearSesion(key, pcodigo);
+
+            return exito
+        }
+
+        function _actualizarHotel(photel){
+            let exito = dataStorageFactory.actualizarHotel(photel);
+            return exito
+        }
+
+        function _hotelActivo(){
+            let sesionActiva = dataStorageFactory.retornarSesionActiva(key),
+                codigoActivo;
+
+            if(!sesionActiva){
+                codigoActivo = undefined;
+            }else{
+                codigoActivo = sesionActiva;
+            }
+            return codigoActivo
+        }
+
+        function _obtenerInfoHotel(pcodigo){
+            let hotelesBD = _retornarHoteles(),
+                hotelActivo = [];
+
+            for(let i=0; i<hotelesBD.length; i++){
+                if(hotelesBD[i].getId() == pcodigo){
+                    hotelActivo = hotelesBD[i];
+                }
+            }
+            return hotelActivo
+        }
+
+        function _borrarSesion(){
+            dataStorageFactory.eliminarSesion(key);
         }
     }
 })();

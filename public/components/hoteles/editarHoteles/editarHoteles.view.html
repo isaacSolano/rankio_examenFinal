@@ -1,0 +1,103 @@
+<main class="container" id="main">
+
+    <div class="row">
+        <div class="col-md-12 text-center">
+            <h1>Primero ingrese los datos</h1>
+            <h3>Para editarla información de su hotel</h3>
+        </div>
+    </div>
+    
+    <form name="editarHote" autocomplete="off" class="row py-5" ng-submit="vm.preEditarHotel(vm.hotel)">
+
+        <div class="col-md-4">
+            <div class="form-group py-3">
+                <label>* Nombre del hotel: </label>
+                <input type="text" class="form-control border-top-0 border-left-0 border-right-0 rounded-0 border-dark" ng-model="vm.hotel.nombre" required>
+            </div>
+
+            <div class="form-group py-3">
+                    <label>* Provincia</label>
+                    <select id="sltProvincia" class="custom-select  border-top-0 border-left-0 border-right-0 rounded-0 border-dark" name="campoProvincias" ng-model="vm.hotel.provincia" ng-change="vm.rellenarCantones(vm.hotel.provincia._id)"
+              ng-options="provincia as provincia.name for provincia in vm.provincias track by provincia._id" required>
+                        <option value="">Seleccione una provincia</option>
+                </select>
+
+            </div>
+
+            <div class="form-group py-3">
+                    <label>* Cantón</label>
+                    <select id="sltCanton" class="custom-select  border-top-0 border-left-0 border-right-0 rounded-0 border-dark" name="campoCanton" ng-change="vm.rellenarDistrito(vm.hotel.canton._id)"
+              ng-options="canton as canton.name for canton in vm.cantones track by canton._id" ng-model="vm.hotel.canton" required>
+                        <option value="">Seleccione un cantón</option>
+                    </select>
+                    
+            </div>
+
+            <div class="form-group py-3">
+                    <label>* Distrito</label>
+
+                    <select id="sltDistrito" class="custom-select  border-top-0 border-left-0 border-right-0 rounded-0 border-dark" name="campoDistritos" ng-options="distrito as distrito.name for distrito in vm.distritos track by distrito._id"
+                    ng-model="vm.hotel.distrito" required>
+
+                        <option value="">Seleccione un distrito</option>
+                  </select>
+            </div>
+        </div>
+
+        <div class="col-md-4 align-self-start">
+
+            <div class="form-group py-3">
+                <label>* Ingrese un identificador para el hotel</label>
+                <input type="number" class="form-control border-top-0 border-left-0 border-right-0 rounded-0 border-dark" ng-model="vm.hotel.codigo" required disabled>
+            </div>
+
+            <div class="form-group py-3">
+                <label>* Fotografia del hotel</label>
+                <input type="file" subir-Foto ng-model="vm.hotel.foto" required>
+            </div>
+
+            <div class="form-group py-3">
+                    <label>* Dirección</label>
+                    <input type="text" class="form-control border-top-0 border-left-0 border-right-0 rounded-0 border-dark" ng-model="vm.hotel.direccion" places-auto-complete size=80 placeholder="" component-restrictions="{country:'cr'}" required>
+            </div>
+
+            <div class="form-group py-3 mx-auto">
+                    <label>* Ubicación</label>
+
+                    <ng-map center="{{vm.coordenadas}}" zoom="14">
+                        <marker position="{{vm.coordenadas}}" draggable="true"  on-dragend="vm.ubicacion($event)"></marker>
+                    </ng-map>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="form-group py-3">
+                <label>* Teléfono reservaciones</label>
+                <input type="number" class="form-control border-top-0 border-left-0 border-right-0 rounded-0 border-dark" ng-model="vm.hotel.telefonoReservaciones" required>
+            </div>
+
+            <div class="form-group py-3">
+                <label>* Correo reservaciones</label>
+                <input type="email" class="form-control border-top-0 border-left-0 border-right-0 rounded-0 border-dark" ng-model="vm.hotel.correoReservaciones" required>
+            </div>
+
+            <div class="form-group py-3">
+                <label>* Teléfono servicio al cliente</label>
+                <input type="number" class="form-control border-top-0 border-left-0 border-right-0 rounded-0 border-dark" ng-model="vm.hotel.telefonoAtencion" required>
+            </div>
+
+            <div class="form-group py-3">
+                    <label>* Correo servicio al cliente</label>
+                    <input type="email" class="form-control border-top-0 border-left-0 border-right-0 rounded-0 border-dark" ng-model="vm.hotel.correoAtencion" required>
+            </div>
+        </div>
+
+        <div class="col-md-12">	
+            <button type="submit" class="btn btn-success rounded-0" ng-disabled="editarHote.$invalid">Registrar</button>
+
+            <button type="submit" ng-click="vm.borrarSesion()" class="btn btn-success rounded-0">Regresar</button>
+        </div>
+
+    </form>
+
+</main>

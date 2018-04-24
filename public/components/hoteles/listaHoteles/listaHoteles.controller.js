@@ -11,6 +11,8 @@
     function controladorListaHoteles($state, $stateParams, servicioSesion, servicioHoteles){
         let vm = this;
 
+        servicioHoteles.borrarSesion();
+        
         const correoActivo = servicioSesion.usuarioActivo();
         
         vm.infoUsuarioActivo = () => {
@@ -34,5 +36,13 @@
                 }
             });
         }
+
+        vm.editarHotel = (hotelEditar) => {
+            let transfDatos = servicioHoteles.crearSesion(hotelEditar.codigo);
+
+            if(transfDatos){
+                $state.go('central.editarHotel');
+            }
+        };
     }
 })();

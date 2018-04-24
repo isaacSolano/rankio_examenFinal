@@ -42,3 +42,13 @@ module.exports.eliminar = (req, res) => {
         }
     });
 }
+
+module.exports.actualizar = (req, res) => {
+    HotelModel.update({codigo: req.body.codigo}, req.body, (err, hotel) => {
+        if (err){
+            res.json({success:false,msg:'No se ha actualizado.' + handleError(err)});
+          } else{
+            res.json({success:true,msg:'Se ha actualizado correctamente.' + res});
+          }
+    });
+}

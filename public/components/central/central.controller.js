@@ -12,7 +12,7 @@
         const correoActivo = servicioSesion.usuarioActivo();
 
         if(correoActivo == undefined){
-            $state.go('inicio');
+            $state.go('inicioSesion');
         }
 
         let vm = this;

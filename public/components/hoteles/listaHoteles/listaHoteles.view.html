@@ -14,7 +14,7 @@
         <a ng-if="!vm.infoUsuarioActivo()" href="#" class="col-md-4 align-self-end text-md-right p-0 text-info">Ver más...</a>
 
         <div class="col-md-12 py-4" ng-if="vm.infoUsuarioActivo()">
-            <button type="button" ng-click="vm.editarHotel()" class="btn btn-success rounded-0">Editar hotel</button>
+            <button type="button" ng-click="vm.editarHotel(hoteles)" class="btn btn-success rounded-0">Editar hotel</button>
             <button type="button" ng-click="vm.eliminarHotel(hoteles)" class="btn btn-success rounded-0">Eliminar hotel</button>
         </div>
     </div>

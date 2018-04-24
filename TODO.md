@@ -125,16 +125,16 @@
 | node_modules\xmlhttprequest-ssl\lib\XMLHttpRequest.js | 646 | figure out InspectorInstrumentation::didLoadXHR(cookie)
 | node_modules\yargs\lib\command.js | 207 | move positional arg logic to yargs-parser and remove this duplication
 | node_modules\yargs\lib\validation.js | 159 | case-insensitive configurability
+| node_modules\@uirouter\core\_bundles\ui-router-core.js | 2603 | explicitly make this user configurable
+| node_modules\@uirouter\core\_bundles\ui-router-core.js | 3076 | Also compare parameters
+| node_modules\@uirouter\core\_bundles\ui-router-core.js | 5027 | typeof?
+| node_modules\@uirouter\core\_bundles\ui-router-core.js | 5627 | Validate incoming view name with a regexp to allow:
 | node_modules\@uirouter\angularjs\release\angular-ui-router.js | 2610 | explicitly make this user configurable
 | node_modules\@uirouter\angularjs\release\angular-ui-router.js | 3083 | Also compare parameters
 | node_modules\@uirouter\angularjs\release\angular-ui-router.js | 5034 | typeof?
 | node_modules\@uirouter\angularjs\release\angular-ui-router.js | 5634 | Validate incoming view name with a regexp to allow:
 | node_modules\@uirouter\angularjs\release\angular-ui-router.js | 9851 | Use $view service as a central point for registering component-level hooks
 | node_modules\@uirouter\angularjs\release\ui-router-angularjs.js | 1863 | Use $view service as a central point for registering component-level hooks
-| node_modules\@uirouter\core\_bundles\ui-router-core.js | 2603 | explicitly make this user configurable
-| node_modules\@uirouter\core\_bundles\ui-router-core.js | 3076 | Also compare parameters
-| node_modules\@uirouter\core\_bundles\ui-router-core.js | 5027 | typeof?
-| node_modules\@uirouter\core\_bundles\ui-router-core.js | 5627 | Validate incoming view name with a regexp to allow:
 | node_modules\argparse\lib\help\formatter.js | 10 | add [additonal formatters][1]
 | node_modules\body-parser\lib\types\json.js | 74 | maybe make this configurable or part of "strict" option
 | node_modules\body-parser\node_modules\debug\browser.js | 37 | add a `localStorage` variable to explicitly enable/disable colors
@@ -142,10 +142,10 @@
 | node_modules\bootstrap\dist\js\bootstrap.bundle.js | 5840 | @fat remove sketch reliance on jQuery position/offset
 | node_modules\bootstrap\dist\js\bootstrap.js | 2254 | @fat these should probably be refactored out of modal.js
 | node_modules\bootstrap\dist\js\bootstrap.js | 3406 | @fat remove sketch reliance on jQuery position/offset
-| node_modules\bootstrap\js\src\modal.js | 401 | @fat these should probably be refactored out of modal.js
-| node_modules\bootstrap\js\src\scrollspy.js | 132 | @fat remove sketch reliance on jQuery position/offset
 | node_modules\bootstrap\js\dist\modal.js | 397 | @fat these should probably be refactored out of modal.js
 | node_modules\bootstrap\js\dist\scrollspy.js | 115 | @fat remove sketch reliance on jQuery position/offset
+| node_modules\bootstrap\js\src\modal.js | 401 | @fat these should probably be refactored out of modal.js
+| node_modules\bootstrap\js\src\scrollspy.js | 132 | @fat remove sketch reliance on jQuery position/offset
 | node_modules\browser-sync\client\dist\index.js | 153 | add a `localStorage` variable to explicitly enable/disable colors
 | node_modules\bson\lib\bson\decimal128.js | 239 | implementing a custom parsing for this, or refactoring the regex would yield
 | node_modules\connect\node_modules\debug\browser.js | 37 | add a `localStorage` variable to explicitly enable/disable colors
@@ -155,15 +155,15 @@
 | node_modules\duplexer2\node_modules\string_decoder\index.js | 45 | There should be a utf8-strict encoding that rejects invalid UTF-8 code
 | node_modules\express\node_modules\send\index.js | 791 | this is all lame, refactor meeee
 | node_modules\finalhandler\node_modules\debug\browser.js | 37 | add a `localStorage` variable to explicitly enable/disable colors
+| node_modules\fs-extra\lib\mkdirs\win32.js | 13 | expand to include the rest
 | node_modules\glob\node_modules\minimatch\browser.js | 461 | It would probably be faster to determine this
 | node_modules\glob\node_modules\minimatch\minimatch.js | 460 | It would probably be faster to determine this
 | node_modules\glob-stream\node_modules\minimatch\browser.js | 461 | It would probably be faster to determine this
 | node_modules\glob-stream\node_modules\minimatch\minimatch.js | 460 | It would probably be faster to determine this
 | node_modules\glob-stream\node_modules\string_decoder\index.js | 43 | Handling all encodings inside a single object makes it very difficult
 | node_modules\glob-stream\node_modules\string_decoder\index.js | 45 | There should be a utf8-strict encoding that rejects invalid UTF-8 code
-| node_modules\gulp-connect\node_modules\send\index.js | 685 | this is all lame, refactor meeee
 | node_modules\globby\node_modules\glob\common.js | 106 | is an absolute `cwd` supposed to be resolved against `root`?
-| node_modules\fs-extra\lib\mkdirs\win32.js | 13 | expand to include the rest
+| node_modules\gulp-connect\node_modules\send\index.js | 685 | this is all lame, refactor meeee
 | node_modules\js-yaml\lib\js-yaml\loader.js | 591 | rework to inline fn with no type cast?
 | node_modules\js-yaml\lib\js-yaml\type.js | 45 | Add tag format check.
 | node_modules\jsdoc\lib\jsdoc\augment.js | 180 | try to reduce overlap with similar methods
@@ -189,9 +189,9 @@
 | node_modules\jsdoc\lib\jsdoc\schema.js | 385 | define this as an enumeration elsewhere
 | node_modules\jsdoc\lib\jsdoc\schema.js | 504 | make these an enumeration
 | node_modules\jsdoc\templates\default\publish.js | 675 | move the tutorial functions to templateHelper.js
+| node_modules\moment\src\locale\fr.js | 50 | Return 'e' when day of month > 1. Move this case inside
 | node_modules\mongodb\lib\bulk\common.js | 202 | Something better
 | node_modules\mongodb\lib\bulk\ordered.js | 227 | Bring from driver information in isMaster
-| node_modules\moment\src\locale\fr.js | 50 | Return 'e' when day of month > 1. Move this case inside
 | node_modules\mongodb-core\lib\connection\pool.js | 1193 | reenable when sessions development is complete
 | node_modules\mongodb-core\lib\topologies\replset.js | 1188 | once we drop Node 4, use destructuring either here or in arguments.
 | node_modules\mongodb-core\lib\topologies\shared.js | 385 | 
@@ -321,8 +321,6 @@
 | node_modules\vinyl-fs\node_modules\vinyl\index.js | 23 | should this be moved to vinyl-fs?
 | node_modules\vinyl-fs\node_modules\vinyl\index.js | 42 | should this be moved to vinyl-fs?
 | node_modules\vinyl-fs\node_modules\vinyl\index.js | 149 | should this be moved to vinyl-fs?
-| node_modules\@uirouter\angularjs\lib-esm\directives\viewDirective.js | 320 | Use $view service as a central point for registering component-level hooks
-| node_modules\@uirouter\angularjs\lib\directives\viewDirective.js | 196 | Use $view service as a central point for registering component-level hooks
 | node_modules\@uirouter\core\lib\resolve\resolvable.js | 13 | explicitly make this user configurable
 | node_modules\@uirouter\core\lib\transition\transition.js | 165 | Also compare parameters
 | node_modules\@uirouter\core\lib\url\urlMatcherFactory.js | 78 | typeof?
@@ -331,12 +329,14 @@
 | node_modules\@uirouter\core\lib-esm\transition\transition.js | 163 | Also compare parameters
 | node_modules\@uirouter\core\lib-esm\url\urlMatcherFactory.js | 76 | typeof?
 | node_modules\@uirouter\core\lib-esm\view\view.js | 56 | Validate incoming view name with a regexp to allow:
-| node_modules\csso\lib\compressor\clean\Ruleset.js | 16 | remove toLowerCase when type selectors will be normalized
+| node_modules\@uirouter\angularjs\lib\directives\viewDirective.js | 196 | Use $view service as a central point for registering component-level hooks
+| node_modules\@uirouter\angularjs\lib-esm\directives\viewDirective.js | 320 | Use $view service as a central point for registering component-level hooks
 | node_modules\csso\lib\compressor\compress\color.js | 290 | remove those tokens
 | node_modules\csso\lib\compressor\compress\color.js | 297 | remove those tokens
 | node_modules\csso\lib\compressor\compress\color.js | 307 | remove those tokens
 | node_modules\csso\lib\compressor\compress\color.js | 315 | remove those tokens
 | node_modules\csso\lib\compressor\compress\Url.js | 30 | make better quote type selection
+| node_modules\csso\lib\compressor\clean\Ruleset.js | 16 | remove toLowerCase when type selectors will be normalized
 | node_modules\csso\lib\compressor\restructure\1-initialMergeRuleset.js | 41 | remove initial merge
 | node_modules\csso\lib\compressor\restructure\8-restructRuleset.js | 80 | need to be checked
 | node_modules\csso\lib\compressor\restructure\8-restructRuleset.js | 136 | disallow up merge only if any property interception only (i.e. diff.ne2overrided.length > 0);
@@ -349,8 +349,8 @@
 | node_modules\express\node_modules\iconv-lite\encodings\dbcs-data.js | 64 | KDDI extension to Shift_JIS
 | node_modules\express\node_modules\iconv-lite\encodings\dbcs-data.js | 65 | IBM CCSID 942 = CP932, but F0-F9 custom chars and other char changes.
 | node_modules\express\node_modules\iconv-lite\encodings\dbcs-data.js | 66 | IBM CCSID 943 = Shift_JIS = CP932 with original Shift_JIS lower 128 chars.
-| node_modules\express\node_modules\mime\build\test.js | 46 | Uncomment once #157 is resolved
 | node_modules\express\node_modules\iconv-lite\lib\extend-node.js | 167 | Set _charsWritten.
+| node_modules\express\node_modules\mime\build\test.js | 46 | Uncomment once #157 is resolved
 | node_modules\glob-stream\node_modules\readable-stream\lib\_stream_writable.js | 145 | defer error events consistently everywhere, not just the cb
 | node_modules\globule\node_modules\minimatch\test\basic.js | 3 | Some of these tests do very bad things with backslashes, and will
 | node_modules\globule\node_modules\minimatch\test\defaults.js | 3 | Some of these tests do very bad things with backslashes, and will
@@ -438,10 +438,10 @@
 | node_modules\jsdoc\plugins\test\specs\markdown.js | 13 | more tests; refactor the plugin so multiple settings can be tested
 | node_modules\localtunnel\node_modules\yargs\lib\validation.js | 136 | case-insensitive configurability
 | node_modules\localtunnel\node_modules\debug\src\browser.js | 36 | add a `localStorage` variable to explicitly enable/disable colors
-| node_modules\moment\src\lib\duration\as.js | 35 | Use this.as('ms')?
 | node_modules\moment\src\lib\create\from-array.js | 100 | We need to take the current isoWeekYear, but that depends on
 | node_modules\moment\src\lib\create\from-string-and-format.js | 19 | Move this to another part of the creation flow to prevent circular deps
 | node_modules\moment\src\lib\create\from-string.js | 136 | Replace the vanilla JS Date object with an indepentent day-of-week check.
+| node_modules\moment\src\lib\duration\as.js | 35 | Use this.as('ms')?
 | node_modules\moment\src\lib\locale\locales.js | 50 | Find a better way to register and load all the locales in Node
 | node_modules\moment\src\lib\locale\set.js | 19 | Remove "ordinalParse" fallback in next major release.
 | node_modules\moment\src\lib\moment\add-subtract.js | 9 | remove 'name' arg after deprecation is removed

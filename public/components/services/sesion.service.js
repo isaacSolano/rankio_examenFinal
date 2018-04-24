@@ -8,6 +8,8 @@
     servicioSesion.$inject = ['servicioUsuarios', 'dataStorageFactory'];
 
     function servicioSesion(servicioUsuarios, dataStorageFactory){
+        const key = 'session';
+
         let sessionAPI = {
             inicioSesion: _inicioSesion,
             cerrarSesion: _cerrarSesion,
@@ -22,7 +24,7 @@
 
             for(let i=0; i<usuariosBD.length; i++){
                 if(usuariosBD[i].correo == pcredenciales.correo && usuariosBD[i].contrasena == pcredenciales.contrasena){
-                    dataStorageFactory.crearSesion(usuariosBD[i].correo);
+                    dataStorageFactory.crearSesion(key ,usuariosBD[i].correo);
                     exito = true;
                 }
             }
@@ -30,11 +32,11 @@
         }
 
         function _cerrarSesion(){
-            dataStorageFactory.eliminarSesion();
+            dataStorageFactory.eliminarSesion(key);
         }
 
         function _usuarioActivo(){
-            let sesionActiva = dataStorageFactory.retornarSesionActiva(),
+            let sesionActiva = dataStorageFactory.retornarSesionActiva(key),
                 correoActivo;
 
             if(!sesionActiva){

@@ -91,6 +91,21 @@
         controllerAs: 'vm'
       })
 
+      .state('central.editarHotel', {
+        url: '/editarHotel',
+        templateUrl: './components/hoteles/editarHoteles/editarHoteles.view.html',
+        data: {
+          pageTitle: 'Rankio | Edición de hoteles'
+        },
+        resolve: {
+          load: ['$ocLazyLoad', ($ocLazyLoad) => {
+            return $ocLazyLoad.load('./components/hoteles/editarHoteles/editarHoteles.controller.js')
+          }]
+        },
+        controller: 'controladorEdicionHoteles',
+        controllerAs: 'vm'
+      })
+
     $urlRouterProvider.otherwise('/');
   };
 })();
