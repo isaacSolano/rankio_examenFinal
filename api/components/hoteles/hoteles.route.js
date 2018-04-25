@@ -28,4 +28,9 @@ router.route('/actualizar_hotel')
         hoteles.actualizar(req, res);
     });
 
+router.route('/agregar_calificacion_hotel')
+    .put((req, res) => {
+        hoteles.agregar_calificacion(req, res);
+    });
+
 module.exports = router;

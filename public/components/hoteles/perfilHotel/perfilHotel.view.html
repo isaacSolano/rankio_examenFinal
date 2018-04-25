@@ -1,0 +1,221 @@
+<section id="mainList" class="container mb-5">
+
+    <div class="row">
+
+        <div class="col-md-12" id="list-element">
+
+            <h2>{{vm.infoHotel.nombre}}</h2>
+                
+            <div class="py-5">
+                <ng-map center="{{vm.coordenadas}}" zoom="16">
+                    <marker position="{{vm.coordenadas}}"></marker>
+                </ng-map>
+            </div>
+
+            <p>Nos ubicamos en: {{vm.infoHotel.direccion}}</p>
+
+            <div class="py-3">
+
+                <h4 class="py-4">Contáctenos por nuestros medios</h4>
+
+                <p>
+                    Telefono para reservaciones:
+                    <span>
+                        <a href="tel:{{vm.infoHotel.telefonoReservaciones}}" class="text-info">{{vm.infoHotel.telefonoReservaciones}}</a>
+                    </span>
+                </p>
+
+                <p>
+                    Correo para reservaciones:
+                    <span>
+                        <a href="mailto:{{vm.infoHotel.correoReservaciones}}" class="text-info">{{vm.infoHotel.correoReservaciones}}</a>
+                    </span>
+                </p>
+
+                <p>
+                    Telefono para servicio al cliente:
+                    <span>
+                        <a href="tel:{{vm.infoHotel.telefonoAtencion}}" class="text-info">{{vm.infoHotel.telefonoAtencion}}</a>
+                    </span>
+                </p>
+
+                <p>
+                    Correo para servicio al cliente:
+                    <span>
+                        <a href="mailto:{{vm.infoHotel.correoAtencion}}" class="text-info">{{vm.infoHotel.correoAtencion}}</a>
+                    </span>
+                </p>
+
+            </div>
+
+        </div>
+
+        <div class="col-md-12 py-5" id="list-element">
+
+            <div>
+                <h3>Vea las opiniones de otros usuarios</h3>
+
+                <div class="my-5">
+                    <h5 class="my-2">Comida</h5>
+                    <div class="progress">
+                        <div class="progress-bar w-{{vm.comida}} bg-success" role="progressbar" aria-valuenow="{{vm.comida}}" aria-valuemin="0" aria-valuemax="125"></div>
+                    </div>
+                </div>
+
+                <div class="my-5">
+                        <h5 class="my-2">Servicio al cliente</h5>
+                        <div class="progress">
+                            <div class="progress-bar w-{{vm.atencion}} bg-success" role="progressbar" aria-valuenow="{{vm.atencion}}" aria-valuemin="0" aria-valuemax="125"></div>
+                        </div>
+                </div>
+
+                <div class="my-5">
+                        <h5 class="my-2">Habitaciones</h5>
+                        <div class="progress">
+                            <div class="progress-bar w-{{vm.habitaciones}} bg-success" role="progressbar" aria-valuenow="{{vm.habitaciones}}" aria-valuemin="0" aria-valuemax="125"></div>
+                        </div>
+                </div>
+
+                <div class="my-5">
+                        <h5 class="my-2">Infraestructura</h5>
+                        <div class="progress">
+                            <div class="progress-bar w-{{vm.infraestructura}} bg-success" role="progressbar" aria-valuenow="{{vm.infraestructura}}" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                </div>
+
+                <div class="my-5">
+                        <h5 class="my-2">Limpieza</h5>
+                        <div class="progress">
+                            <div class="progress-bar w-{{vm.limpieza}} bg-success" role="progressbar" aria-valuenow="{{vm.limpieza}}" aria-valuemin="0" aria-valuemax="125"></div>
+                        </div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <form class="col-md-12 py-5" id="list-element" ng-submit="vm.registroCalificacion(vm.calificacion)">
+
+            <h2 class="text-center">¿Ya estuvo hospedado aquí?</h2>
+            <h3 class="text-center">Cuenténos de su estadía</h3>
+
+            <div class="calificacion text-center py-4">
+                <h5 class="py-3">Comida</h5>
+
+                <div class="btn-group btn-group-toggle">
+
+                    <label class="btn btn-success">
+                        <input type="radio" name="options" autocomplete="off" ng-model="vm.calificacion.comida" value="1"> Mal
+                    </label>
+
+                    <label class="btn btn-success">
+                        <input type="radio" name="options" autocomplete="off" ng-model="vm.calificacion.comida" value="2"> Regular
+                    </label>
+
+                    <label class="btn btn-success">
+                        <input type="radio" name="options" autocomplete="off" ng-model="vm.calificacion.comida" value="3"> Bien
+                    </label>
+
+                    <label class="btn btn-success">
+                        <input type="radio" name="options" autocomplete="off" ng-model="vm.calificacion.comida" value="4"> Excelente
+                    </label>
+                </div>
+            </div>
+
+            <div class="calificacion text-center py-4">
+                <h5 class="py-3">Atención al cliente</h5>
+
+                <div class="btn-group btn-group-toggle">
+
+                    <label class="btn btn-success">
+                        <input type="radio" name="options" autocomplete="off" ng-model="vm.calificacion.atencion" value="1"> Mal
+                    </label>
+
+                    <label class="btn btn-success">
+                        <input type="radio" name="options" autocomplete="off" ng-model="vm.calificacion.atencion" value="2"> Regular
+                    </label>
+
+                    <label class="btn btn-success">
+                        <input type="radio" name="options" autocomplete="off" ng-model="vm.calificacion.atencion" value="3"> Bien
+                    </label>
+
+                    <label class="btn btn-success">
+                        <input type="radio" name="options" autocomplete="off" ng-model="vm.calificacion.atencion" value="4"> Excelente
+                    </label>
+                </div>
+            </div>
+
+            <div class="calificacion text-center py-4">
+                <h5 class="py-3">Habitaciones</h5>
+
+                <div class="btn-group btn-group-toggle">
+
+                    <label class="btn btn-success">
+                        <input type="radio" name="options" autocomplete="off" ng-model="vm.calificacion.habitaciones" value="1"> Mal
+                    </label>
+
+                    <label class="btn btn-success">
+                        <input type="radio" name="options" autocomplete="off" ng-model="vm.calificacion.habitaciones" value="2"> Regular
+                    </label>
+
+                    <label class="btn btn-success">
+                        <input type="radio" name="options" autocomplete="off" ng-model="vm.calificacion.habitaciones" value="3"> Bien
+                    </label>
+
+                    <label class="btn btn-success">
+                        <input type="radio" name="options" autocomplete="off" ng-model="vm.calificacion.habitaciones" value="4"> Excelente
+                    </label>
+                </div>
+            </div>
+
+            <div class="calificacion text-center py-4">
+                <h5 class="py-3">Infreaestructura</h5>
+
+                <div class="btn-group btn-group-toggle">
+
+                    <label class="btn btn-success">
+                        <input type="radio" name="options" autocomplete="off" ng-model="vm.calificacion.infraestructura" value="1"> Mal
+                    </label>
+
+                    <label class="btn btn-success">
+                        <input type="radio" name="options" autocomplete="off" ng-model="vm.calificacion.infraestructura" value="2"> Regular
+                    </label>
+
+                    <label class="btn btn-success">
+                        <input type="radio" name="options" autocomplete="off" ng-model="vm.calificacion.infraestructura" value="3"> Bien
+                    </label>
+
+                    <label class="btn btn-success">
+                        <input type="radio" name="options" autocomplete="off" ng-model="vm.calificacion.infraestructura" value="4"> Excelente
+                    </label>
+                </div>
+            </div>
+
+            <div class="calificacion text-center py-4">
+                <h5 class="py-3">Limpieza</h5>
+
+                <div class="btn-group btn-group-toggle">
+
+                    <label class="btn btn-success">
+                        <input type="radio" name="options" autocomplete="off" ng-model="vm.calificacion.limpieza" value="1"> Mal
+                    </label>
+
+                    <label class="btn btn-success">
+                        <input type="radio" name="options" autocomplete="off" ng-model="vm.calificacion.limpieza" value="2"> Regular
+                    </label>
+
+                    <label class="btn btn-success">
+                        <input type="radio" name="options" autocomplete="off" ng-model="vm.calificacion.limpieza" value="3"> Bien
+                    </label>
+
+                    <label class="btn btn-success">
+                        <input type="radio" name="options" autocomplete="off" ng-model="vm.calificacion.limpieza" value="4"> Excelente
+                    </label>
+                </div>
+            </div>
+
+            <button type="submit" class="btn btn-success">Registrar calificaión</button>
+
+        </form>
+
+</section>

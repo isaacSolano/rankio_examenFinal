@@ -52,3 +52,15 @@ module.exports.actualizar = (req, res) => {
           }
     });
 }
+
+module.exports.agregar_calificacion = (req, res) => {
+    console.log(req.body)
+    HotelModel.update({codigo: req.body.codigoHotel}, {$push: {calificaciones: {codigoCalificacion: req.body.codigoCalificacion}}}, (error) => {
+            if(error){
+                res.json({ success: false, msg: 'No se ha actualizado la calificacion debido al siguiente error: ' + handleError(error) });
+            }else{
+                res.json({ success: true, msg: 'Se ha registrado la calificacion con éxito'});
+            }
+    
+        });
+}

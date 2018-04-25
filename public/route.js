@@ -106,6 +106,21 @@
         controllerAs: 'vm'
       })
 
+      .state('central.perfilHotel', {
+        url: '/perfilHotel',
+        templateUrl: './components/hoteles/perfilHotel/perfilHotel.view.html',
+        data: {
+          pageTitle: 'Rankio | Perfil de hotel'
+        },
+        resolve: {
+          load: ['$ocLazyLoad', ($ocLazyLoad) => {
+            return $ocLazyLoad.load('./components/hoteles/perfilHotel/perfilHotel.controller.js')
+          }]
+        },
+        controller: 'controladorPerfilHotel',
+        controllerAs: 'vm'
+      })
+
     $urlRouterProvider.otherwise('/');
   };
 })();

@@ -14,9 +14,9 @@
         if(hotelEditarCodigo == undefined){
             $state.go('central.listaHoteles');
         }
-        let vm = this;
-
         let hotelActivoInfo = servicioHoteles.obtenerInfoHotel(hotelEditarCodigo);
+        
+        let vm = this;
 
         vm.hotel = {
             nombre: hotelActivoInfo.nombre,
@@ -109,14 +109,11 @@
                     icon: 'success',
                     button: 'Aceptar'
                 });
-                borrarSesion();
+                $state.go('central.listaHoteles');
             }
         }
 
-        vm.borrarSesion = () => {borrarSesion()}
-
-
-        function borrarSesion(){
+        vm.borrarSesion = () => {
             $state.go('central.listaHoteles');
         }
     }

@@ -1,25 +1,20 @@
 (() => {
     'use strict'
 
-
-
     angular
     .module('rankio')
     .controller('controladorListaHoteles', controladorListaHoteles);
 
     controladorListaHoteles.$inject = ['$state', '$stateParams', 'servicioSesion', 'servicioHoteles'];
     function controladorListaHoteles($state, $stateParams, servicioSesion, servicioHoteles){
-        let vm = this;
-
+        
         servicioHoteles.borrarSesion();
         
         const correoActivo = servicioSesion.usuarioActivo();
         
-        vm.infoUsuarioActivo = () => {
-            let infoUsuarioActivo = servicioSesion.infoUsuarioActivo(correoActivo);
+        let vm = this;
 
-            return infoUsuarioActivo.admin
-        }
+        vm.admin = servicioSesion.infoUsuarioActivo(correoActivo).admin;
 
         vm.retornarHoteles = servicioHoteles.retornarHoteles();
 
@@ -44,5 +39,13 @@
                 $state.go('central.editarHotel');
             }
         };
+
+        vm.perfilHotel = (hoteles) => {
+            let transfDatos = servicioHoteles.crearSesion(hoteles.codigo);
+
+            if(transfDatos){
+                $state.go('central.perfilHotel');
+            }
+        }
     }
 })();

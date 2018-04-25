@@ -8,11 +8,16 @@
     servicioHoteles.$inject = ['dataStorageFactory'];
     function servicioHoteles(dataStorageFactory){
         const key = 'hotel';
+
         const publicAPI = {
             registrarHotel: _registrarHotel,
             retornarHoteles: _retornarHoteles,
             eliminarHotel: _eliminarHotel,
             actualizarHotel: _actualizarHotel,
+
+            retornarCalificaciones: _retornarCalificaciones,
+            registrarCalificaciones: _registrarCalificaciones,
+            retornarCalificacionesHotel: _retornarCalificacionesHotel,
 
             crearSesion: _crearSesion,
             hotelActivo: _hotelActivo,
@@ -44,14 +49,13 @@
             if(hotelesBD.length == 0){
             }else{
                 hotelesBD.forEach(obj => {
-                    let objHotel = new Hotel (obj.canton, obj.latitud, obj.longitud, obj.correoAtencion, obj.correoReservaciones, obj.direccion, obj.distrito, obj.foto, obj.nombre, obj.provincia, obj.telefonoAtencion, obj.telefonoReservaciones, obj.codigo); 
+                    let objHotel = new Hotel (obj.canton, obj.latitud, obj.longitud, obj.correoAtencion, obj.correoReservaciones, obj.direccion, obj.distrito, obj.foto, obj.nombre, obj.provincia, obj.telefonoAtencion, obj.telefonoReservaciones, obj.codigo);
                     
-                    obj.calificaciones.forEach(calificacionTemp => {
-                            let objCalificacion = new Calificacion(calificacionTemp.codigo);
-
-                            objCalificacion.setCalificacion(objCalificacion);
-                        });
-                        todosLosHoteles.push(objHotel);
+                    obj.calificaciones.forEach(objCalificaciones => {
+                        objHotel.calificaciones.push(objCalificaciones)
+                    });
+                    
+                    todosLosHoteles.push(objHotel);
                 });
             }
             return todosLosHoteles
@@ -72,6 +76,52 @@
         function _actualizarHotel(photel){
             let exito = dataStorageFactory.actualizarHotel(photel);
             return exito
+        }
+
+        function _retornarCalificaciones(){
+            let calificacionesBD = dataStorageFactory.retornarCalificaciones(),
+                todasLasCalificaciones = [];
+
+            if(calificacionesBD.length == 0){
+                
+            }else{
+                calificacionesBD.forEach(calificacionTem => {
+                    let calificacion = new Calificacion(calificacionTem.codigo, calificacionTem.codigoHotel, calificacionTem.comida, calificacionTem.atencion, calificacionTem.habitaciones, calificacionTem.infraestructura, calificacionTem.limpieza, calificacionTem.general);
+
+                    todasLasCalificaciones.push(calificacion);
+                });
+            }
+            return todasLasCalificaciones
+        }
+
+        function _registrarCalificaciones(pcalificacion){
+            let calificacionesBD = _retornarCalificaciones(),
+                repetido = false;
+
+            for(let i = 0; i < calificacionesBD.length; i++){
+                if(calificacionesBD[i].getId() == pcalificacion.getId()){
+                    repetido = true;
+                }
+            }
+            
+            if(!repetido){
+                dataStorageFactory.agregarCalificacionHotel(pcalificacion.codigoHotel, pcalificacion.codigo)
+                dataStorageFactory.registrarCalificaciones(pcalificacion);
+            }
+
+            return !repetido
+        }
+
+        function _retornarCalificacionesHotel(hotelCodigo){
+            let calificacionesBD = _retornarCalificaciones(),
+                calificacionesHotel = [];
+
+            for(let i=0; i<calificacionesBD.length; i++){
+                if(calificacionesBD[i].getIdHotel() == hotelCodigo){
+                    calificacionesHotel.push(calificacionesBD[i]);
+                }
+            }
+            return calificacionesHotel
         }
 
         function _hotelActivo(){

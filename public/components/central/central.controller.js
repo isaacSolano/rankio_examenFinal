@@ -11,11 +11,11 @@
 
         const correoActivo = servicioSesion.usuarioActivo();
 
+        let vm = this;
+
         if(correoActivo == undefined){
             $state.go('inicioSesion');
         }
-
-        let vm = this;
 
         vm.admin = servicioSesion.infoUsuarioActivo(correoActivo).admin;
 

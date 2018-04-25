@@ -39,7 +39,21 @@ class Hotel{
 }
 
 class Calificacion{
-    constructor(pcodigo){
+    constructor(pcodigo, pcodigoHotel, pcomida, patencion, phabitaciones, pinfraestructura, plimpieza, pgeneral){
         this.codigo = pcodigo;
+        this.codigoHotel = pcodigoHotel;
+        this.comida = pcomida;
+        this.atencion = patencion;
+        this.habitaciones = phabitaciones;
+        this.infraestructura = pinfraestructura;
+        this.limpieza = plimpieza;
+        this.general = pgeneral;
+    }
+
+    getId(){
+        return this.codigo;
+    }
+    getIdHotel(){
+        return this.codigoHotel;
     }
 }

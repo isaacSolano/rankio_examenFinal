@@ -16,6 +16,11 @@
             eliminarHotel: _eliminarHotel,
             actualizarHotel: _actualizarHotel,
 
+            agregarCalificacionHotel: _agregarCalificacionHotel,
+
+            registrarCalificaciones: _registrarCalificaciones,
+            retornarCalificaciones: _retornarCalificaciones,
+
             crearSesion: _crearSesion,
             eliminarSesion: _eliminarSesion,
             retornarSesionActiva: _retornarSesionActiva
@@ -198,6 +203,84 @@
                 response = err
             });
             return response;
+        }
+
+        function _agregarCalificacionHotel(codigoHotel, codigoCalificacion){
+            let response;
+            let peticion = $.ajax({
+              url: 'http://localhost:4000/api/agregar_calificacion_hotel',
+              type: 'put',
+              contentType: 'application/x-www-form-urlencoded; charset=utf-8',
+              dataType: 'json',
+              async: false,
+              data: {
+                codigoHotel : codigoHotel,
+                codigoCalificacion : codigoCalificacion
+              }
+            });
+      
+            peticion.done((datos) => {
+              response = datos.success;
+              console.log('Petición realizada con éxito');
+            });
+            peticion.fail((error) => {
+              response = error;
+              console.log('Ocurrió un error con la calificacion');
+            });
+      
+            return response;
+        }
+
+        function _registrarCalificaciones(data){
+            let response;
+
+            let peticion = $.ajax({
+                url: 'http://localhost:4000/api/registrar_calificacion',
+                type: 'post',
+                contentType: 'application/x-www-form-urlencoded; charset=utf-8',
+                dataType: 'json',
+                async: false,
+                data: {
+                    'codigo': data.codigo,
+                    'codigoHotel': data.codigoHotel,
+                    'comida': data.comida,
+                    'atencion': data.atencion,
+                    'habitaciones': data.habitaciones,
+                    'infraestructura': data.infraestructura,
+                    'limpieza': data.limpieza,
+                    'general': data.general,
+                }
+            });
+            peticion.done((datos) => {
+                response = datos.success;
+            });
+            peticion.fail((err) => {
+                response = err
+            });
+
+            return response
+        }
+
+        function _retornarCalificaciones(){
+            let calificaionesBD = [];
+
+            let peticion = $.ajax({
+                url: 'http://localhost:4000/api/retornar_calificaciones',
+                type: 'get',
+                contentType: 'application/x-www-form-urlencoded; charset=utf-8',
+                dataType: 'json',
+                async: false,
+                data: {}                
+            });
+
+            peticion.done((calificaciones) => {
+                calificaionesBD = calificaciones;
+            });
+            peticion.fail(() => {
+                calificaionesBD = [];
+                console.log('Error en la petición');
+            });
+            return calificaionesBD
         }
 
         function _crearSesion(key, value){

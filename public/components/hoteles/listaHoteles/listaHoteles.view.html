@@ -8,14 +8,20 @@
 
     <div class="row py-5" id="list-element" ng-repeat="hoteles in vm.retornarHoteles">
         <h4 class="col-md-6 m-0 py-2">{{hoteles.nombre}}</h4>
-        <p class="col-md-6 text-md-right align-self-end m-0 py-2"> <span>{{hoteles.provincia}}, </span><span>{{hoteles.canton}}, </span><span>{{hoteles.distrito}}</span></p>
-        <img src="{{hoteles.foto}}" alt="Imagen del hotel" class="py-5 col-md-4">
-        <p class="col-md-4 align-self-end text-center">{{hoteles.direccion}}</p>
-        <a ng-if="!vm.infoUsuarioActivo()" href="#" class="col-md-4 align-self-end text-md-right p-0 text-info">Ver más...</a>
 
-        <div class="col-md-12 py-4" ng-if="vm.infoUsuarioActivo()">
+        <p class="col-md-6 text-md-right align-self-end m-0 py-2"> {{hoteles.provincia}}, {{hoteles.canton}}, {{hoteles.distrito}}</p>
+
+        <img src="{{hoteles.foto}}" alt="Imagen del hotel" class="py-5 col-md-6">
+
+        <p class="col-md-6 align-self-center text-center">{{hoteles.direccion}}</p>
+
+        <a ng-if="!vm.admin" ng-click="vm.perfilHotel(hoteles)" class="col-md-12 align-self-end text-md-right text-info">Ver más...</a>
+
+        <div class="col-md-12 py-4" ng-if="vm.admin">
             <button type="button" ng-click="vm.editarHotel(hoteles)" class="btn btn-success rounded-0">Editar hotel</button>
             <button type="button" ng-click="vm.eliminarHotel(hoteles)" class="btn btn-success rounded-0">Eliminar hotel</button>
         </div>
+
     </div>
+
 </section>
