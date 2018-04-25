@@ -5,13 +5,15 @@
     .module('rankio')
     .controller('controladorPerfilHotel', controladorPerfilHotel);
 
-    controladorPerfilHotel.$inject = ['servicioHoteles'];
+    controladorPerfilHotel.$inject = ['$state', 'servicioHoteles'];
 
-    function controladorPerfilHotel(servicioHoteles){
+    function controladorPerfilHotel($state, servicioHoteles){
 
         const hotelCodigo = servicioHoteles.hotelActivo();
 
         let hotelActivoInfo = servicioHoteles.obtenerInfoHotel(hotelCodigo);
+
+        let calificaciones = servicioHoteles.retornarCalificacionesHotel(hotelCodigo);
 
         if(hotelCodigo == undefined){
             $state.go('central.listaHoteles');
@@ -57,20 +59,105 @@
             return promedio
         }
         
-        vm.comida = calcularComida();
+        vm.comida = calcularComida(calificaciones);
 
-        vm.atencion = 50;
+        vm.atencion = calcularAtencion(calificaciones);
 
-        vm.habitaciones = 75;
+        vm.habitaciones = calcularHabitaciones(calificaciones);
 
-        vm.infraestructura = 75;
+        vm.infraestructura = calcularInfraestructura(calificaciones);
         
-        vm.limpieza = 100;
+        vm.limpieza = calcularLimpieza(calificaciones);
 
-        function calcularComida(){
-            let calificaciones = servicioHoteles.retornarCalificacionesHotel(hotelCodigo);
 
-            console.log(calificaciones);
+        function calcularComida(calificaciones){
+            let total = 0,
+                promedio = 0,
+                valorGrafico = 0;
+
+            calificaciones.forEach(obj => {
+                total += Number(obj.comida);
+            });
+            promedio = (total / calificaciones.length);
+            valorGrafico = promediarValorGrafico(Math.round(promedio) );
+
+            return valorGrafico
+        }
+
+        function calcularAtencion(calificaciones){
+            let total = 0,
+                promedio = 0,
+                valorGrafico = 0;
+
+            calificaciones.forEach(obj => {
+                total += Number(obj.atencion);
+            });
+            promedio = (total / calificaciones.length);
+            valorGrafico = promediarValorGrafico(Math.round(promedio) );
+
+            return valorGrafico
+        }
+
+        function calcularHabitaciones(calificaciones){
+            let total = 0,
+                promedio = 0,
+                valorGrafico = 0;
+
+            calificaciones.forEach(obj => {
+                total += Number(obj.habitaciones);
+            });
+            promedio = (total / calificaciones.length);
+            valorGrafico = promediarValorGrafico(Math.round(promedio) );
+
+            return valorGrafico
+        }
+
+        function calcularInfraestructura(calificaciones){
+            let total = 0,
+                promedio = 0,
+                valorGrafico = 0;
+
+            calificaciones.forEach(obj => {
+                total += Number(obj.infraestructura);
+            });
+            promedio = (total / calificaciones.length);
+            valorGrafico = promediarValorGrafico(Math.round(promedio) );
+
+            return valorGrafico
+        }
+
+        function calcularLimpieza(calificaciones){
+            let total = 0,
+                promedio = 0,
+                valorGrafico = 0;
+
+            calificaciones.forEach(obj => {
+                total += Number(obj.limpieza);
+            });
+            promedio = (total / calificaciones.length);
+            valorGrafico = promediarValorGrafico(Math.round(promedio) );
+
+            return valorGrafico
+        }
+
+        function promediarValorGrafico(ppromedio){
+            switch (ppromedio){
+                case 1:
+                    return  25
+                break;
+
+                case 2: 
+                    return 50
+                break;
+
+                case 3:
+                    return 75
+                break;
+
+                case 4:
+                    return 100
+                break;
+            }
         }
 
     }
