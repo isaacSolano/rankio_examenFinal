@@ -6,7 +6,19 @@
         </div>
     </div>
 
-    <div class="row py-5" id="list-element" ng-repeat="hoteles in vm.retornarHoteles">
+    <div class="row">
+            <input type="text" placeholder="Busque los hoteles por provincia" class="col-md-12 form-control border-right-0 border-left-0 border-top-0 rounded-0 border-dark my-3" ng-model="vm.buscador">
+    </div>
+
+    <div class="row">
+        <select class="custom-select  border-top-0 border-left-0 border-right-0 rounded-0 border-dark col-md-2 text-left" ng-model="vm.orden">
+            <option value="">Ordenar...</option>
+            <option value="nombre">Ascendente</option>
+            <option value="-nombre">Descendente</option>
+        </select>
+    </div>
+
+    <div class="row py-5" id="list-element" ng-repeat="hoteles in vm.retornarHoteles | filter: vm.buscador | orderBy: vm.orden">
         <h4 class="col-md-6 m-0 py-2">{{hoteles.nombre}}</h4>
 
         <p class="col-md-6 text-md-right align-self-end m-0 py-2"> {{hoteles.provincia}}, {{hoteles.canton}}, {{hoteles.distrito}}</p>
