@@ -26,3 +26,15 @@ module.exports.retornar = (req, res) => {
         res.send(calificaciones);
     })
 }
+
+module.exports.eliminar = (req, res) => {
+    console.log(req.body)
+    CalificacionModel.deleteMany({codigoHotel: req.body.codigo}, (err) => {
+        if(err){
+            res.json({success:false, msj: 'Problemas en la petición' + err});
+        }else{
+            res.json({success:true, msj: 'Se elimino correctamente'});
+        }
+    })
+
+}

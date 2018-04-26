@@ -38,7 +38,7 @@ module.exports.eliminar = (req, res) => {
         if(err){
             res.json({success:false, msj: 'Problemas en la petición' + err});
         }else{
-            res.json({success:true, msj: 'Se registro correctamente'});
+            res.json({success:true, msj: 'Se elimino correctamente'});
         }
     });
 }

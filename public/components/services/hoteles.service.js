@@ -62,9 +62,10 @@
         }
 
         function _eliminarHotel(photel){
-            let exito = dataStorageFactory.eliminarHotel(photel);
+            let exito = dataStorageFactory.eliminarHotel(photel),
+                exito2 = dataStorageFactory.eliminarCalificacion(photel.codigo);
 
-            return exito
+            return exito && exito2
         }
 
         function _crearSesion(pcodigo){

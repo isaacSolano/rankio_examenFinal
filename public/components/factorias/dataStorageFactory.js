@@ -20,6 +20,7 @@
 
             registrarCalificaciones: _registrarCalificaciones,
             retornarCalificaciones: _retornarCalificaciones,
+            eliminarCalificacion: _eliminarCalificacion,
 
             crearSesion: _crearSesion,
             eliminarSesion: _eliminarSesion,
@@ -281,6 +282,29 @@
                 console.log('Error en la petición');
             });
             return calificaionesBD
+        }
+
+        function _eliminarCalificacion(data){
+            let response;
+
+            let peticion = $.ajax({
+                url: 'http://localhost:4000/api/eliminar_calificacion',
+                type: 'post',
+                contentType: 'application/x-www-form-urlencoded; charset=utf-8',
+                dataType: 'json',
+                async: false,
+                data: {
+                    'codigo': data
+                }                
+            });
+
+            peticion.done((datos) => {
+                response = datos.success;
+            });
+            peticion.fail((err) => {
+                response = err
+            });
+            return response;
         }
 
         function _crearSesion(key, value){

@@ -18,4 +18,9 @@ router.route('/retornar_calificaciones')
         calificaciones.retornar(req, res)
     });
 
+router.route('/eliminar_calificacion')
+    .post((req, res) => {
+        calificaciones.eliminar(req, res)
+    })
+
 module.exports = router;

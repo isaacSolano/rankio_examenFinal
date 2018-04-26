@@ -26,7 +26,7 @@
             telefonoReservaciones: Number(hotelActivoInfo.telefonoReservaciones),
             correoReservaciones: hotelActivoInfo.correoReservaciones,
             telefonoAtencion: Number(hotelActivoInfo.telefonoAtencion),
-            correoAtencion: hotelActivoInfo.correoAtencion
+            correoAtencion: hotelActivoInfo.correoAtencion,
         }
 
         vm.coordenadas = [hotelActivoInfo.latitud, hotelActivoInfo.longitud];
@@ -93,6 +93,7 @@
         vm.editarHotel = (peditarHotel, urlFoto) => {
             let nuevoHotel = new Hotel (peditarHotel.canton.name, peditarHotel.latitud, peditarHotel.longitud, peditarHotel.correoAtencion, peditarHotel.correoReservaciones, peditarHotel.direccion, peditarHotel.distrito.name, urlFoto, peditarHotel.nombre, peditarHotel.provincia.name, peditarHotel.telefonoAtencion, peditarHotel.telefonoReservaciones, peditarHotel.codigo);
 
+            nuevoHotel.calificaciones = hotelActivoInfo.calificaciones
             let exito = servicioHoteles.actualizarHotel(nuevoHotel);
 
             if(!exito){
