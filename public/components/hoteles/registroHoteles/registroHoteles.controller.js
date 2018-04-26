@@ -5,9 +5,9 @@
     .module('rankio')
     .controller('controladorRegistroHoteles', controladorRegistroHoteles)
 
-    controladorRegistroHoteles.$inject = ['$http', 'servicioSubirImagen', 'servicioHoteles', 'Upload'];
+    controladorRegistroHoteles.$inject = ['$state', '$http', 'servicioSubirImagen', 'servicioHoteles', 'Upload'];
 
-    function controladorRegistroHoteles($http, servicioSubirImagen, servicioHoteles, Upload){
+    function controladorRegistroHoteles($state, $http, servicioSubirImagen, servicioHoteles, Upload){
         let vm = this;
 
         vm.provincias = $http({
@@ -72,8 +72,6 @@
         vm.registroHotel = (pnuevoHotel, urlFoto) => {
             let nuevoHotel = new Hotel (pnuevoHotel.canton.name, pnuevoHotel.latitud, pnuevoHotel.longitud, pnuevoHotel.correoAtencion, pnuevoHotel.correoReservaciones, pnuevoHotel.direccion, pnuevoHotel.distrito.name, urlFoto, pnuevoHotel.nombre, pnuevoHotel.provincia.name, pnuevoHotel.telefonoAtencion, pnuevoHotel.telefonoReservaciones, pnuevoHotel.codigo);
 
-            console.log(nuevoHotel);
-
             let exito = servicioHoteles.registrarHotel(nuevoHotel);
 
             if(!exito){
@@ -90,6 +88,7 @@
                     icon: 'success',
                     button: 'Aceptar'
                 });
+                $state.go('central.listaHoteles')
             }
         }
     }

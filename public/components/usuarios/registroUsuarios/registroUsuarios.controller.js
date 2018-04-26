@@ -42,6 +42,7 @@
                         icon: 'success',
                         button: 'Aceptar'
                     });
+                    $state.go('inicioSesion')
                 }
             }
         }
