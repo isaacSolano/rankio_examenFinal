@@ -1,6 +1,7 @@
 ### TODOs
 | Filename | line # | TODO
 |:------|:------:|:------
+| node_modules\uglify-to-browserify\index.js | 34 | remove once https://github.com/substack/node-browserify/issues/631 is resolved
 | node_modules\babylon\lib\index.js | 21 | 
 | node_modules\babylon\lib\index.js | 25 | 
 | node_modules\babylon\lib\index.js | 1990 | 
@@ -37,6 +38,13 @@
 | node_modules\iconv-lite\lib\extend-node.js | 166 | Set _charsWritten.
 | node_modules\immutable\dist\immutable.js | 2255 | seems like these methods are very similar
 | node_modules\ink-docstrap\template\publish.js | 841 | move the tutorial functions to templateHelper.js
+| node_modules\jquery\dist\jquery.js | 753 | identify versions
+| node_modules\jquery\dist\jquery.js | 767 | identify versions
+| node_modules\jquery\dist\jquery.js | 4234 | Now that all calls to _data and _removeData have been replaced
+| node_modules\jquery\dist\jquery.slim.js | 753 | identify versions
+| node_modules\jquery\dist\jquery.slim.js | 767 | identify versions
+| node_modules\jquery\dist\jquery.slim.js | 4234 | Now that all calls to _data and _removeData have been replaced
+| node_modules\jquery\src\data.js | 85 | Now that all calls to _data and _removeData have been replaced
 | node_modules\js-base64\test-moment\moment.js | 363 | Remove "ordinalParse" fallback in next major release.
 | node_modules\js-base64\test-moment\moment.js | 1007 | add sorting
 | node_modules\js-base64\test-moment\moment.js | 1047 | Another silent failure?
@@ -48,19 +56,11 @@
 | node_modules\js-base64\test-moment\moment.js | 3113 | remove 'name' arg after deprecation is removed
 | node_modules\js-base64\test-moment\moment.js | 3668 | Remove "ordinalParse" fallback in next major release.
 | node_modules\js-base64\test-moment\moment.js | 4226 | Use this.as('ms')?
-| node_modules\jquery\dist\jquery.js | 753 | identify versions
-| node_modules\jquery\dist\jquery.js | 767 | identify versions
-| node_modules\jquery\dist\jquery.js | 4234 | Now that all calls to _data and _removeData have been replaced
-| node_modules\jquery\dist\jquery.slim.js | 753 | identify versions
-| node_modules\jquery\dist\jquery.slim.js | 767 | identify versions
-| node_modules\jquery\dist\jquery.slim.js | 4234 | Now that all calls to _data and _removeData have been replaced
-| node_modules\jquery\src\data.js | 85 | Now that all calls to _data and _removeData have been replaced
 | node_modules\js-yaml\dist\js-yaml.js | 1542 | rework to inline fn with no type cast?
 | node_modules\js-yaml\dist\js-yaml.js | 2896 | Add tag format check.
 | node_modules\localtunnel\lib\Tunnel.js | 47 | @shtylman don't print to stdout?
 | node_modules\localtunnel\lib\TunnelCluster.js | 77 | some languages have single threaded servers which makes opening up
 | node_modules\lodash\function\debounce.js | 62 | Changes.cancel();
-| node_modules\moment\locale\fr.js | 54 | Return 'e' when day of month > 1. Move this case inside
 | node_modules\moment\min\locales.js | 3290 | Return 'e' when day of month > 1. Move this case inside
 | node_modules\moment\min\moment-with-locales.js | 357 | Remove "ordinalParse" fallback in next major release.
 | node_modules\moment\min\moment-with-locales.js | 1000 | add sorting
@@ -74,6 +74,7 @@
 | node_modules\moment\min\moment-with-locales.js | 3668 | Remove "ordinalParse" fallback in next major release.
 | node_modules\moment\min\moment-with-locales.js | 4196 | Use this.as('ms')?
 | node_modules\moment\min\moment-with-locales.js | 7781 | Return 'e' when day of month > 1. Move this case inside
+| node_modules\moment\locale\fr.js | 54 | Return 'e' when day of month > 1. Move this case inside
 | node_modules\mongodb\lib\cursor.js | 1228 | refactor this logic into core
 | node_modules\mongoose\lib\aggregate.js | 503 | refactor to reuse the query builder logic
 | node_modules\mongoose\lib\query.js | 3520 | refactor
@@ -189,9 +190,9 @@
 | node_modules\jsdoc\lib\jsdoc\schema.js | 385 | define this as an enumeration elsewhere
 | node_modules\jsdoc\lib\jsdoc\schema.js | 504 | make these an enumeration
 | node_modules\jsdoc\templates\default\publish.js | 675 | move the tutorial functions to templateHelper.js
+| node_modules\moment\src\locale\fr.js | 50 | Return 'e' when day of month > 1. Move this case inside
 | node_modules\mongodb\lib\bulk\common.js | 202 | Something better
 | node_modules\mongodb\lib\bulk\ordered.js | 227 | Bring from driver information in isMaster
-| node_modules\moment\src\locale\fr.js | 50 | Return 'e' when day of month > 1. Move this case inside
 | node_modules\mongodb-core\lib\connection\pool.js | 1193 | reenable when sessions development is complete
 | node_modules\mongodb-core\lib\topologies\replset.js | 1188 | once we drop Node 4, use destructuring either here or in arguments.
 | node_modules\mongodb-core\lib\topologies\shared.js | 385 | 
@@ -327,16 +328,16 @@
 | node_modules\@uirouter\core\lib\transition\transition.js | 165 | Also compare parameters
 | node_modules\@uirouter\core\lib\url\urlMatcherFactory.js | 78 | typeof?
 | node_modules\@uirouter\core\lib\view\view.js | 58 | Validate incoming view name with a regexp to allow:
-| node_modules\@uirouter\core\lib-esm\resolve\resolvable.js | 11 | explicitly make this user configurable
 | node_modules\@uirouter\core\lib-esm\transition\transition.js | 163 | Also compare parameters
 | node_modules\@uirouter\core\lib-esm\url\urlMatcherFactory.js | 76 | typeof?
 | node_modules\@uirouter\core\lib-esm\view\view.js | 56 | Validate incoming view name with a regexp to allow:
+| node_modules\@uirouter\core\lib-esm\resolve\resolvable.js | 11 | explicitly make this user configurable
+| node_modules\csso\lib\compressor\clean\Ruleset.js | 16 | remove toLowerCase when type selectors will be normalized
 | node_modules\csso\lib\compressor\compress\color.js | 290 | remove those tokens
 | node_modules\csso\lib\compressor\compress\color.js | 297 | remove those tokens
 | node_modules\csso\lib\compressor\compress\color.js | 307 | remove those tokens
 | node_modules\csso\lib\compressor\compress\color.js | 315 | remove those tokens
 | node_modules\csso\lib\compressor\compress\Url.js | 30 | make better quote type selection
-| node_modules\csso\lib\compressor\clean\Ruleset.js | 16 | remove toLowerCase when type selectors will be normalized
 | node_modules\csso\lib\compressor\restructure\1-initialMergeRuleset.js | 41 | remove initial merge
 | node_modules\csso\lib\compressor\restructure\8-restructRuleset.js | 80 | need to be checked
 | node_modules\csso\lib\compressor\restructure\8-restructRuleset.js | 136 | disallow up merge only if any property interception only (i.e. diff.ne2overrided.length > 0);
@@ -344,12 +345,12 @@
 | node_modules\duplexer2\node_modules\readable-stream\lib\_stream_writable.js | 365 | @isaacs clean this up
 | node_modules\engine.io\node_modules\debug\src\browser.js | 41 | add a `localStorage` variable to explicitly enable/disable colors
 | node_modules\engine.io-client\node_modules\debug\src\browser.js | 41 | add a `localStorage` variable to explicitly enable/disable colors
-| node_modules\express\node_modules\iconv-lite\lib\extend-node.js | 167 | Set _charsWritten.
 | node_modules\express\node_modules\iconv-lite\encodings\dbcs-codec.js | 348 | What if we have no default? (resCode == undefined)
 | node_modules\express\node_modules\iconv-lite\encodings\dbcs-codec.js | 472 | Callback with seq.
 | node_modules\express\node_modules\iconv-lite\encodings\dbcs-data.js | 64 | KDDI extension to Shift_JIS
 | node_modules\express\node_modules\iconv-lite\encodings\dbcs-data.js | 65 | IBM CCSID 942 = CP932, but F0-F9 custom chars and other char changes.
 | node_modules\express\node_modules\iconv-lite\encodings\dbcs-data.js | 66 | IBM CCSID 943 = Shift_JIS = CP932 with original Shift_JIS lower 128 chars.
+| node_modules\express\node_modules\iconv-lite\lib\extend-node.js | 167 | Set _charsWritten.
 | node_modules\express\node_modules\mime\build\test.js | 46 | Uncomment once #157 is resolved
 | node_modules\glob-stream\node_modules\readable-stream\lib\_stream_writable.js | 145 | defer error events consistently everywhere, not just the cb
 | node_modules\globule\node_modules\minimatch\test\basic.js | 3 | Some of these tests do very bad things with backslashes, and will
@@ -436,8 +437,8 @@
 | node_modules\jsdoc\lib\jsdoc\util\templateHelper.js | 941 | generate a warning (ideally during parsing!)
 | node_modules\jsdoc\lib\jsdoc\util\templateHelper.js | 975 | docs
 | node_modules\jsdoc\plugins\test\specs\markdown.js | 13 | more tests; refactor the plugin so multiple settings can be tested
-| node_modules\localtunnel\node_modules\yargs\lib\validation.js | 136 | case-insensitive configurability
 | node_modules\localtunnel\node_modules\debug\src\browser.js | 36 | add a `localStorage` variable to explicitly enable/disable colors
+| node_modules\localtunnel\node_modules\yargs\lib\validation.js | 136 | case-insensitive configurability
 | node_modules\moment\src\lib\create\from-array.js | 100 | We need to take the current isoWeekYear, but that depends on
 | node_modules\moment\src\lib\create\from-string-and-format.js | 19 | Move this to another part of the creation flow to prevent circular deps
 | node_modules\moment\src\lib\create\from-string.js | 136 | Replace the vanilla JS Date object with an indepentent day-of-week check.
@@ -532,7 +533,6 @@
 | node_modules\jsdoc\cli.js | 229 | docs
 | node_modules\jsdoc\cli.js | 304 | docs
 | node_modules\jsdoc\cli.js | 464 | docs
-| node_modules\liftoff\index.js | 91 | break this out into lib/
 | node_modules\lodash\index.js | 7643 | Changes.cancel();
 | node_modules\mime-types\index.js | 54 | use media-typer
 | node_modules\mime-types\index.js | 78 | should this even be in this module?
@@ -551,6 +551,7 @@
 | node_modules\moment\moment.js | 3670 | Remove "ordinalParse" fallback in next major release.
 | node_modules\moment\moment.js | 4198 | Use this.as('ms')?
 | node_modules\oclazyload\changelog.js | 121 | @vojta if it's slow, use spawn and stream it instead
+| node_modules\liftoff\index.js | 91 | break this out into lib/
 | node_modules\q\q.js | 745 | "===" should be Object.is or equiv
 | node_modules\q\q.js | 1786 | attempt to recycle the rejection with "this".
 | node_modules\send\index.js | 798 | this is all lame, refactor meeee

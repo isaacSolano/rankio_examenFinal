@@ -43,12 +43,9 @@ gulp.task('dependencies', () => {
     .pipe(gulp.dest('./public/lib/angular'));
 
   gulp.src([
-    './node_modules/angular-messages/angular-messages.min.js',
-    './node_modules/angular-scroll/angular-scroll.min.js',
     './node_modules/ng-file-upload/dist/ng-file-upload.min.js',
     './node_modules/ng-file-upload/dist/ng-file-upload-shim.min.js',
     './node_modules/ngmap/build/scripts/ng-map.min.js',
-    './node_modules/generate-password/test/generator.js'
   ])
     .pipe(gulp.dest('./public/lib/angular/dependencies'));
 
@@ -62,7 +59,6 @@ gulp.task('dependencies', () => {
   gulp.src([
     './node_modules/bootstrap/dist/js/bootstrap.min.js',
     './node_modules/jquery/dist/jquery.min.js',
-    './node_modules/popper.js/dist/umd/popper.min.js'
   ])
     .pipe(gulp.dest('./public/lib/bootstrap'));
 

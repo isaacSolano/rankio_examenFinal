@@ -5,9 +5,9 @@
     .module('rankio')
     .controller('controladorRegistroUsuarios', controladorRegistroUsuarios);
 
-    controladorRegistroUsuarios.$inject = ['servicioUsuarios'];
+    controladorRegistroUsuarios.$inject = ['$state', 'servicioUsuarios'];
     
-    function controladorRegistroUsuarios(servicioUsuarios){
+    function controladorRegistroUsuarios($state, servicioUsuarios){
         let vm = this;
 
         vm.registrarUsuario = (pusuarioRegistar) => {
